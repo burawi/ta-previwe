@@ -1,0 +1,27 @@
+extends ../template
+
+block content
+  .page-wrapper.flex-column
+    .tabs
+      a.tab(href="sector.html")= videos
+      a.tab.active(href="playlists.html")= chapters
+      .tab= forum
+      a.tab(href="sectors.html")= subjects
+      .tab= magazines
+    .page-content.white-page
+      .page-section
+        .page-section-header
+          .page-section-title= chapters
+          .page-section-caption= playlists
+        .page-section-list
+          each i in [1,2,3,4,5,6,7,8,9,10,11,12,13]
+            a.page-section-item(href="playlist.html")
+              .page-item-thumbnail
+                img.item-thumbnail-image(src='../assets/sample_images/v1.jpeg')
+                .item-thumbnail-label.item-thumbnail-playlist_play
+                  .item-playlist-play_icon.mdi.mdi-play
+                  .item-playlist-play_text= playAll
+                .item-thumbnail-label.item-thumbnail-playlist_info
+                  .item-playlist-videos_number 15
+                  .item-playlist-icon.mdi.mdi-playlist-play
+              .page-item-title عرض شكب عالباك

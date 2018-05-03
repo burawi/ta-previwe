@@ -1,0 +1,36 @@
+@mixin text-primary {
+  color: rgba(0,0,0,.87);
+}
+
+@mixin text-secondary {
+  color: rgba(0, 0, 0, 0.54);
+}
+
+@mixin text-hint {
+  color: rgba(0,0,0,.38);
+}
+
+@mixin text-heading {
+  font-size: 24px;
+}
+
+@mixin text-title {
+  font-size: 20px;
+}
+
+@mixin text-subheading {
+  font-size: 16px;
+}
+
+@mixin text-body {
+  font-size: 14px;
+}
+
+@mixin text-body2 {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+@mixin text-caption {
+  font-size: 12px;
+}

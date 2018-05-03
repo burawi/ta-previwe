@@ -1,0 +1,101 @@
+doctype html
+html(dir=htmlDir)
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    title TakiAcademy
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel="shortcut icon" href="../assets/img/logo.png")
+    link(href='https://fonts.googleapis.com/css?family=Roboto+Condensed|Tajawal:500', rel='stylesheet')
+    link(rel='stylesheet', href='https://cdn.materialdesignicons.com/2.3.54/css/materialdesignicons.min.css')
+    link(rel='stylesheet', href='../assets/css/style.css')
+  body
+    header
+      .main-corner
+        i#main-sidebar-switcher.mdi.mdi-menu.menu-switcher
+        a.header-appname(href="index.html")
+          img(src='../assets/img/logo.png')
+          |  TakiAcademy
+      .search-box
+        input(type='text', placeholder=search)
+        .search-box-submit
+          i.mdi.mdi-magnify
+      .header-icons
+        i.mdi.mdi-apps.icon
+        i.mdi.mdi-bell.icon
+        img.header-avatar(src='../assets/sample_images/avatar.png')
+    .under-header
+      #main-sidebar.sidebar
+        .sidebar-section
+          a.sidebar-item.active(href="index.html")
+            i.item-icon.mdi.mdi-home
+            span.item-text= home
+          .sidebar-item
+            i.item-icon.mdi.mdi-fire
+            span.item-text= trendings
+          a.sidebar-item(href="sectors.html")
+            i.item-icon.mdi.mdi-youtube
+            span.item-text= subjects
+        .sidebar-section
+          .sidebar-section-title= library
+          a.sidebar-item(href="playlist.html")
+            i.item-icon.mdi.mdi-history
+            span.item-text= history
+          a.sidebar-item(href="playlist.html")
+            i.item-icon.mdi.mdi-clock
+            span.item-text= watchLater
+          a.sidebar-item(href="playlist.html")
+            i.item-icon.mdi.mdi-thumb-up
+            span.item-text= likedVideos
+        .sidebar-section
+          .sidebar-section-title= subjects
+          a.sidebar-item.live(href="sector.html")
+            img.item-icon(src='../assets/sample_images/english.jpeg')
+            span.item-text= english
+            i.item-live_icon.mdi.mdi-access-point
+          a.sidebar-item(href="sector.html")
+            img.item-icon(src='../assets/sample_images/math.jpeg')
+            span.item-text= maths
+            i.item-live_icon.mdi.mdi-access-point
+            .item-info-number 8
+          a.sidebar-item(href="sector.html")
+            img.item-icon(src='../assets/sample_images/physics.jpeg')
+            span.item-text= physics
+            i.item-live_icon.mdi.mdi-access-point
+            .item-info-number 2
+          .sidebar-item
+            i.item-icon.mdi.mdi-chevron-down
+            span.item-text= seeMore
+        .sidebar-section
+          .sidebar-section-title= chapters
+          a.sidebar-item.live(href="playlist.html")
+            img.item-icon(src='../assets/sample_images/cn.jpg')
+            span.item-text Nombres Complexes
+            i.item-live_icon.mdi.mdi-access-point
+          a.sidebar-item(href="playlist.html")
+            img.item-icon(src='../assets/sample_images/rl.png')
+            span.item-text Ciruit RL
+            i.item-live_icon.mdi.mdi-access-point
+          a.sidebar-item(href="playlist.html")
+            img.item-icon(src='../assets/sample_images/philo.png')
+            span.item-text الإنية والغيرية
+            i.item-live_icon.mdi.mdi-access-point
+          .sidebar-item
+            i.item-icon.mdi.mdi-chevron-down
+            span.item-text= seeMore
+        .sidebar-section
+          .sidebar-item
+            i.item-icon.mdi.mdi-settings
+            span.item-text= settings
+          .sidebar-item
+            i.item-icon.mdi.mdi-help-circle
+            span.item-text= help
+          .sidebar-item
+            i.item-icon.mdi.mdi-comment-alert
+            span.item-text= sendComments
+        .sidebar-section
+          .fast-sets
+            a.fast-set(href="../ar/index.html") عربية
+            a.fast-set(href="../fr/index.html") Français
+      block content
+      script(src="../assets/js/theme.js")

@@ -1,0 +1,112 @@
+header {
+  height: 56px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #FFF;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.30);
+  padding: 0 16px;
+  z-index: 1;
+  @include text-hint;
+}
+
+header .main-corner {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 240px;
+}
+
+header .main-corner .menu-switcher {
+  margin-right: 16px;
+  padding: 0 8px;
+  cursor: pointer;
+}
+
+html[dir="rtl"] header .main-corner .menu-switcher {
+  margin-right: 0;
+  margin-left: 16px;
+}
+
+header .header-appname {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  @include text-primary;
+  @include text-subheading;
+  
+  img {
+    height: 24px;
+    margin: 0 4px;
+  }
+}
+
+header .search-box {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  
+  input {
+    border-radius: 2px 0px 0px 2px;
+    border: 1px solid #d3d3d3;
+    border-right-width: 0;
+    padding: 2px 12px;
+    &:focus {
+      border-color: #0404de;
+      border-width: 1px;
+      box-shadow: 0px 0px 2px gray inset;
+    }
+  }
+
+  .search-box-submit {
+    height: 32px;
+    width: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #d3d3d3;
+    background-color: #f8f8f8;
+    border-radius: 0px 2px 2px 0px;
+    cursor: pointer;
+    &:hover {
+      background-color: #f0f0f0;
+    }
+  }
+}
+
+html[dir="rtl"] header .search-box {
+  input {
+    border-radius: 0px 2px 2px 0px;
+    border-right-width: 1px;
+    border-left-width: 0;
+  }
+
+  .search-box-submit {
+    border-radius: 2px 0px 0px 2px;
+  }
+}
+
+header .header-icons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  .icon {
+    @include spaced-icon;
+  }
+  
+  .header-avatar {
+    border-radius: 50%;
+    height: 32px;
+    width: 32px;
+    margin: 8px;
+    background-color: $colorPrimary;
+    border: 1px solid #d3d3d3;
+  }
+}
+

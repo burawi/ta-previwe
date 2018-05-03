@@ -1,0 +1,52 @@
+extends ../template
+
+block content
+  .page-wrapper
+    .page-content.white-page.nopadding
+      .video-page
+        .video-page-content
+          .video-box
+            img(src="../assets/sample_images/video.png",style="width: 100%;height: 100%")
+          .video-info
+            .video-info-title تقديم المحور الخامس في العربية للبكالوريا آداب : الرواية العربية - الشحّاذ لنجيب محفوظ
+            .video-info-details
+              .video-info-views 616 مشاهدة
+              .video-info-actions 
+                .video-info-action
+                  .icon.mdi.mdi-thumb-up
+                  | 18
+                .video-info-action
+                  .icon.mdi.mdi-thumb-down
+                  | 0
+                .video-info-action
+                  .icon.mdi.mdi-playlist-plus
+          .video-description
+            .video-description-header
+              img.video-description-sector-logo(src="../assets/sample_images/math.jpeg")
+              .video-description-header-text
+                .video-description-title= maths
+                .video-description-subtitle تم نشره في 26/04/2018
+              .video-description-actions
+                .video-description-subscribe= buy
+                .icon.mdi.mdi-bell
+            .video-description-content
+              | هنا يكون الوصف الخاص بالمقطع وهذا مثال على ذلك أنا مصمم بارع
+        .video-page-sidebar
+          .video-page-sidebar-title= nextVideo
+          .video-page-sidebar-item.next-video
+            .sidebar-item-thumbnail
+              img.sidebar-item-image(src="../assets/sample_images/v2.jpeg")
+              .sidebar-item-duration 8:32
+            .sidebar-item-info
+              .sidebar-item-title 01_interaction onde matière : la diffraction 
+              .sidebar-item-author صابر بوزايدة
+              .sidebar-item-views 71 ألف مشاهدة
+          each i in [1,2,3,4,5,6,7,8,9,10,12,13]
+            .video-page-sidebar-item
+              .sidebar-item-thumbnail
+                img.sidebar-item-image(src="../assets/sample_images/v2.jpeg")
+                .sidebar-item-duration 8:32
+              .sidebar-item-info
+                .sidebar-item-title 01_interaction onde matière : la diffraction 
+                .sidebar-item-author صابر بوزايدة
+                .sidebar-item-views 71 ألف مشاهدة

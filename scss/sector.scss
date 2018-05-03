@@ -1,0 +1,27 @@
+.sectors-grid-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 24px;
+  width: 210px;
+
+  img.sectors-grid-image {
+    width: 103px;
+    height: 103px;
+    border-radius: 50%;
+  }
+
+  .sectors-grid-title {
+    margin: 4px 0;
+  }
+
+  .sectors-grid-details {
+    @include text-hint;
+    @include text-caption;
+  }
+
+  .sectors-grid-action {
+    margin-top: 16px;
+    @include btn-default;
+  }
+}

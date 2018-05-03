@@ -1,0 +1,26 @@
+@mixin btn {
+  border-radius: 2px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 36px;
+  min-width: 88px;
+  margin: 8px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+@mixin btn-primary {
+  background-color: $colorPrimary;
+  color: white;
+  @include btn;
+  @include text-body;
+}
+
+@mixin btn-default {
+  background-color: #eeeeee;
+  @include btn;
+  @include text-secondary;
+  @include text-body;
+}

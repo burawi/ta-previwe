@@ -1,0 +1,25 @@
+body {
+  background-color: #fafafa;
+  padding: 0;
+  margin: 0;
+  font-family: 'Roboto Condensed', 'Tajawal', sans-serif;
+  @include text-primary;
+  @include text-body;
+}
+
+.mdi {
+  @include icon;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.under-header { 
+  padding-top: 56px;
+  height: 100vh;
+  z-index: 0;
+  position: relative;
+  box-sizing: border-box;
+}

@@ -1,0 +1,191 @@
+.video-page {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 0 8px;
+  
+  .video-page-content {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 854px;
+
+    .video-box {
+      width: 100%;
+      height: 480px;
+    }
+
+    .video-info {
+      padding: 24px 0 8px 0;
+      border-bottom: 1px solid $colorDivider;
+
+      .video-info-title {
+        @include text-title;
+      }
+
+      .video-info-details {
+        @include text-hint;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        height: 40px;
+
+        .video-info-views {
+          flex: 1;
+        }
+
+        .video-info-actions {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          @include text-caption;
+          .video-info-action {
+            margin: 0 4px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+          }
+          .icon {
+            @include spaced-icon;
+            cursor: pointer;
+            font-size: 24px;
+            &:hover {
+              @include text-secondary;
+            }
+          }
+        }
+      }
+    }
+
+    .video-description {
+      display: flex;
+      flex-direction: column;
+      padding: 16px 0;
+      border-bottom: 1px solid $colorDivider;
+
+      .video-description-header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        height: 67px;
+        .video-description-sector-logo {
+          width: 48px;
+          height: 48px;
+          border-radius: 50%;
+        }
+
+        .video-description-header-text {
+          margin: 0 16px;
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          .video-description-title {
+            @include text-subheading;
+          }
+          .video-description-subtitle {
+            @include text-hint;
+            @include text-caption;
+          }
+        }
+
+        .video-description-actions {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          .video-description-subscribe {
+            @include btn-primary;
+          }
+          .icon {
+            @include spaced-icon;
+            @include text-hint;
+          }
+        }
+      }
+
+      .video-description-content {
+        padding: 0 64px;
+        white-space: pre-wrap;
+      }
+    }
+  }
+
+  .video-page-sidebar {
+    padding-left: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 402px;
+
+    .video-page-sidebar-title {
+      @include text-subheading;
+      margin-bottom: 12px;
+    }
+    
+    .video-page-sidebar-item {
+      display: flex;
+      flex-direction: row;
+      padding-bottom: 8px;
+      cursor: pointer;
+
+      &.next-video {
+        margin-bottom: 16px;
+        padding-bottom: 16px;
+        border-bottom: 1px solid $colorDivider;
+      }
+      
+      .sidebar-item-thumbnail {
+        width: 168px;
+        height: 94px;
+        position: relative;
+        .sidebar-item-image {
+          height: 100%;
+          width: 100%;
+        }
+        .sidebar-item-duration {
+          background-color: rgba(0,0,0,.67);
+          color: white;
+          border-radius: 2px;
+          position: absolute;
+          padding: 2px 4px;
+          bottom: 4px;
+          right: 4px;
+          font-size: 12px;
+          font-weight: 600;
+        }
+      }
+
+      .sidebar-item-info {
+        margin: 0 8px;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        .sidebar-item-author {
+          @include text-hint;
+          cursor: pointer;
+          &:hover {
+            @include text-secondary;
+          }
+        }
+        .sidebar-item-views {
+          @include text-hint;
+          @include text-caption;
+        }
+      }
+    }
+  }
+}
+
+html[dir="rtl"] .video-page {
+  .video-page-sidebar {
+    padding-right: 24px;
+    padding-left: 0;
+    .video-page-sidebar-item {
+      .sidebar-item-thumbnail {
+        .sidebar-item-duration {
+          right: inherit;
+          left: 4px;
+        }
+      }
+    }
+  }
+}

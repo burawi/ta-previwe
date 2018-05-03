@@ -1,0 +1,21 @@
+extends ../template
+
+block content
+  .page-wrapper.flex-column
+    .tabs
+      a.tab(href="sector.html")= videos
+      a.tab(href="playlists.html")= chapters
+      .tab= forum
+      a.tab.active(href="sectors.html")= subjects
+      .tab= magazines
+    .page-content.white-page
+      .page-section
+        .page-section-header
+          a.page-section-title(href="sector.html")= subjects
+        .page-section-list
+          each i in [1,2,3,4,5,6,7,8,9,10,11,12,13]
+            a.sectors-grid-item(href="sector.html")
+              img.sectors-grid-image(src='../assets/sample_images/physics.jpeg')
+              .sectors-grid-title= physics
+              .sectors-grid-details 20 ألف مشترك
+              .sectors-grid-action= buy         
