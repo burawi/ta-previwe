@@ -1,28 +1,30 @@
 extends ../template
 
+block sidebar
+  +main-sidebar('sector')
+
 block content
   .page-wrapper.flex-column
-    .tabs
-      a.tab.active(href="sector.html")= videos
-      a.tab(href="playlists.html")= chapters
-      .tab= forum
-      a.tab(href="sectors.html")= subjects
-      .tab= magazines
-    .page-content.white-page
-      .page-section
-        .page-section-header
-          img.page-section-image(src='../assets/sample_images/english.jpeg')
-          a.page-section-title(href="sector.html")= english
-          .page-section-caption= suggestions
-        .page-section-list
-          each i in [1,2,3,4,5,6,7,8,9,10,11,12,13]
-            a.page-section-item(href="video.html")
-              .page-item-thumbnail
-                img.item-thumbnail-image(src='../assets/sample_images/v1.jpeg')
-                i.item-thumbnail-label.item-thumbnail-action.mdi.mdi-clock
-                .item-thumbnail-label.item-thumbnail-duration 8:01
-              .page-item-title عرض شكب عالباك
-              .page-item-author فريق التسويق
-              .page-item-details
-                .item-details-first 1 مليون مشاهدة
-                .item-details-second قبل 50 دقيقة
+    +tabs('sector')
+    .page-paper
+      .page-content
+        .page-section
+          .page-section-header
+            img.page-section-image(src='../assets/sample_images/english.jpeg')
+            a.page-section-title(href="sector.html")= english
+            .page-section-caption= suggestions
+            i.mdi.mdi-view-module.page-section-icon.view-switcher#view-grid-switcher
+            i.mdi.mdi-view-list.page-section-icon.active.view-switcher#view-list-switcher
+          .page-section-list.view-list
+            each i in [1,2,3,4,5,6,7,8,9,10,11,12,13]
+              a.video-card(href="video.html")
+                .video-card-thumbnail
+                  img.video-card-image(src='../assets/sample_images/v1.jpeg')
+                  i.video-card-action.mdi.mdi-clock
+                  .video-card-duration 8:01
+                .video-card-info 
+                  .video-card-title عرض شكب عالباك
+                  .video-card-author فريق التسويق
+                  .video-card-details
+                    div 1 مليون مشاهدة
+                    div قبل 50 دقيقة

@@ -2,7 +2,9 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  padding: 0 8px;
+  padding: 24px 8px;
+  width: 1280px;
+  align-self: center;
   
   .video-page-content {
     display: flex;
@@ -120,56 +122,19 @@
       @include text-subheading;
       margin-bottom: 12px;
     }
-    
-    .video-page-sidebar-item {
-      display: flex;
-      flex-direction: row;
-      padding-bottom: 8px;
-      cursor: pointer;
 
+    .video-card {
+      padding-top: 0;
+      padding-bottom: 8px;
       &.next-video {
         margin-bottom: 16px;
         padding-bottom: 16px;
         border-bottom: 1px solid $colorDivider;
       }
-      
-      .sidebar-item-thumbnail {
+
+      .video-card-thumbnail {
         width: 168px;
         height: 94px;
-        position: relative;
-        .sidebar-item-image {
-          height: 100%;
-          width: 100%;
-        }
-        .sidebar-item-duration {
-          background-color: rgba(0,0,0,.67);
-          color: white;
-          border-radius: 2px;
-          position: absolute;
-          padding: 2px 4px;
-          bottom: 4px;
-          right: 4px;
-          font-size: 12px;
-          font-weight: 600;
-        }
-      }
-
-      .sidebar-item-info {
-        margin: 0 8px;
-        display: flex;
-        flex-direction: column;
-        flex: 1;
-        .sidebar-item-author {
-          @include text-hint;
-          cursor: pointer;
-          &:hover {
-            @include text-secondary;
-          }
-        }
-        .sidebar-item-views {
-          @include text-hint;
-          @include text-caption;
-        }
       }
     }
   }
@@ -179,13 +144,5 @@ html[dir="rtl"] .video-page {
   .video-page-sidebar {
     padding-right: 24px;
     padding-left: 0;
-    .video-page-sidebar-item {
-      .sidebar-item-thumbnail {
-        .sidebar-item-duration {
-          right: inherit;
-          left: 4px;
-        }
-      }
-    }
   }
 }

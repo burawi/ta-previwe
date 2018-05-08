@@ -1,0 +1,139 @@
+.video-card {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  margin-bottom: 24px;
+  margin-right: 4px;
+  margin-left: 4px;
+  cursor: pointer;
+  
+  .video-card-thumbnail {
+    width: 210px;
+    height: 118px;
+    position: relative;
+
+    .video-card-image {
+      width: 100%;
+      height: 100%;
+    }
+
+    .video-card-label {
+      background-color: rgba(0,0,0,.67);
+      color: white;
+      border-radius: 2px;
+      position: absolute;
+    }
+
+    .video-card-duration {
+      @extend .video-card-label;
+      padding: 2px 4px;
+      bottom: 4px;
+      right: 4px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .video-card-action {
+      @extend .video-card-label;
+      display: none;
+      padding: 4px;
+      top: 4px;
+      right: 4px;
+    }
+
+    .video-card-playlist_play {
+      @extend .video-card-label;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      align-items: center;
+      justify-content: center;
+      text-transform: uppercase;
+      display: none;
+      z-index: 4;
+      .video-card-play_icon {
+        margin: 8px;
+      }
+    }
+
+    .video-card-playlist_info {
+      @extend .video-card-label;
+      top: 0;
+      right: 0px;
+      width: 40%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 3;
+      .video-card-length {
+        margin: 8px;
+        @include text-subheading;
+      }
+    }
+  }
+
+  &:hover {
+    .video-card-thumbnail {
+      .video-card-action, .video-card-playlist_play {
+        display: flex;
+      }
+    }
+  }
+
+  .video-card-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    .video-card-title {
+      margin: 8px 0;
+    }
+
+    .video-card-author {
+      @include text-caption;
+      @include text-hint;
+      &:hover {
+        @include text-secondary;
+      }
+    }
+
+    .video-card-details {
+      @include text-caption;
+      @include text-hint;
+      display: flex;
+      flex-direction: row;
+      align-items: baseline;
+
+      > *:not(:last-child)::after {
+        content: '•';
+        margin: 0 4px;
+      }
+    }
+  }
+
+  &.video-card-landscape {
+    flex-direction: row;
+    .video-card-thumbnail {
+      margin: 0 8px;
+    }
+  }
+}
+
+html[dir="rtl"] {
+  .video-card {
+    .video-card-thumbnail {
+      .video-card-label {
+        right: inherit;
+        left: 4px;
+      }
+    
+      .video-card-playlist_info, .video-card-playlist_play {
+        right: inherit;
+        left: 0px;
+      }
+    }
+  }
+}

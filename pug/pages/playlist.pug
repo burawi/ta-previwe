@@ -1,43 +1,31 @@
 extends ../template
 
+block sidebar
+  +main-sidebar('playlist')
+
 block content
-  .page-wrapper.flex-row
-    .playlist-sidebar
-      .playlist-thumbnail
-        img(src="../assets/sample_images/v2.jpeg")
-        .playlist-sidebar-play_all
-          .playlist-sidebar-play_icon.mdi.mdi-play
-          .playlist-sidebar-play_text= playAll
-      .playlist-title= playlist
-      .playlist-info
-        div 15 درس
-        div 80 مشاهدة
-        div تم التحديث قبل أسبوع
-    .page-content.white-page.playlist-list
-      .playlist-list-item
-        .playlist-item-number 1
-        .playlist-item-content
-          .playlist-item-thumbnail
-            img(src="../assets/sample_images/v3.jpeg")
-            .playlist-item-duration 02:52
-          .playlist-item-text
-            .playlist-item-title عرض شكب عالباك
-            .playlist-item-author تقي الدين بن مسعود
-      .playlist-list-item
-        .playlist-item-number 2
-        .playlist-item-content
-          .playlist-item-thumbnail
-            img(src="../assets/sample_images/v3.jpeg")
-            .playlist-item-duration 02:52
-          .playlist-item-text
-            .playlist-item-title عرض شكب عالباك
-            .playlist-item-author تقي الدين بن مسعود
-      .playlist-list-item
-        .playlist-item-number 3
-        .playlist-item-content
-          .playlist-item-thumbnail
-            img(src="../assets/sample_images/v3.jpeg")
-            .playlist-item-duration 02:52
-          .playlist-item-text
-            .playlist-item-title عرض شكب عالباك
-            .playlist-item-author تقي الدين بن مسعود
+  .page-wrapper
+    .playlist-page
+      .playlist-sidebar
+        .playlist-thumbnail
+          img(src="../assets/sample_images/v2.jpeg")
+          .playlist-sidebar-play_all
+            .playlist-sidebar-play_icon.mdi.mdi-play
+            .playlist-sidebar-play_text= playAll
+        .playlist-title= playlist
+        .playlist-info
+          div 15 درس
+          div 80 مشاهدة
+          div تم التحديث قبل أسبوع
+      .playlist-list.videos-sidebar
+        each i in [1,2,3,4,5,6,7]
+          .playlist-list-item
+            .playlist-item-number= i
+            .playlist-item-content
+              .video-card.video-card-landscape
+                .video-card-thumbnail
+                  img.video-card-image(src='../assets/sample_images/v1.jpeg')
+                  .video-card-duration 8:01
+                .video-card-info 
+                  .video-card-title عرض شكب عالباك
+                  .video-card-author فريق التسويق

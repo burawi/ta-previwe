@@ -25,4 +25,6 @@ module.exports = {
   english: 'إنقليزية',
   maths: 'رياضيات',
   physics: 'فيزياء',
+  lives: 'الحصص المباشرة',
+  recordings: 'التسجيلات',
 }

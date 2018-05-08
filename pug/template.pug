@@ -1,3 +1,88 @@
+mixin tabs(active)
+  .tabs
+    a.tab(href="sector.html", class=(active == 'sector') ? 'active' : '')= videos
+    a.tab(href="playlists.html", class=(active == 'playlists') ? 'active' : '')= chapters
+    .tab= forum
+    a.tab(href="sectors.html", class=(active == 'sectors') ? 'active' : '')= subjects
+    a.tab(class=(active == 'magazines') ? 'active' : '')= magazines
+    a.tab(class=(active == 'lives') ? 'active' : '')= lives
+    a.tab(class=(active == 'recordings') ? 'active' : '')= recordings
+
+mixin main-sidebar(active, free)
+  #main-sidebar.sidebar(class=free ? 'free hidden' : '')
+    .sidebar-section
+      a.sidebar-item(href="index.html", class=(active == 'index') ? 'active' : '')
+        i.item-icon.mdi.mdi-home
+        span.item-text= home
+      .sidebar-item(class=(active == 'trendings') ? 'active' : '')
+        i.item-icon.mdi.mdi-fire
+        span.item-text= trendings
+      a.sidebar-item(href="sectors.html", class=(active == 'sectors') ? 'active' : '')
+        i.item-icon.mdi.mdi-youtube
+        span.item-text= subjects
+    .sidebar-section
+      .sidebar-section-title= library
+      a.sidebar-item(href="playlist.html", class=(active == 'playlist') ? 'active' : '')
+        i.item-icon.mdi.mdi-history
+        span.item-text= history
+      a.sidebar-item(href="playlist.html", class=(active == 'playlist') ? 'active' : '')
+        i.item-icon.mdi.mdi-clock
+        span.item-text= watchLater
+      a.sidebar-item(href="playlist.html", class=(active == 'playlist') ? 'active' : '')
+        i.item-icon.mdi.mdi-thumb-up
+        span.item-text= likedVideos
+    .sidebar-section
+      .sidebar-section-title= subjects
+      a.sidebar-item.live(href="sector.html", class=(active == 'sector') ? 'active' : '')
+        img.item-icon(src='../assets/sample_images/english.jpeg')
+        span.item-text= english
+        i.item-live_icon.mdi.mdi-access-point
+      a.sidebar-item(href="sector.html", class=(active == 'sector') ? 'active' : '')
+        img.item-icon(src='../assets/sample_images/math.jpeg')
+        span.item-text= maths
+        i.item-live_icon.mdi.mdi-access-point
+        .item-info-number 8
+      a.sidebar-item(href="sector.html", class=(active == 'sector') ? 'active' : '')
+        img.item-icon(src='../assets/sample_images/physics.jpeg')
+        span.item-text= physics
+        i.item-live_icon.mdi.mdi-access-point
+        .item-info-number 2
+      .sidebar-item
+        i.item-icon.mdi.mdi-chevron-down
+        span.item-text= seeMore
+    .sidebar-section
+      .sidebar-section-title= chapters
+      a.sidebar-item.live(href="playlist.html", class=(active == 'playlist') ? 'active' : '')
+        img.item-icon(src='../assets/sample_images/cn.jpg')
+        span.item-text Nombres Complexes
+        i.item-live_icon.mdi.mdi-access-point
+      a.sidebar-item(href="playlist.html", class=(active == 'playlist') ? 'active' : '')
+        img.item-icon(src='../assets/sample_images/rl.png')
+        span.item-text Ciruit RL
+        i.item-live_icon.mdi.mdi-access-point
+      a.sidebar-item(href="playlist.html", class=(active == 'playlist') ? 'active' : '')
+        img.item-icon(src='../assets/sample_images/philo.png')
+        span.item-text الإنية والغيرية
+        i.item-live_icon.mdi.mdi-access-point
+      .sidebar-item
+        i.item-icon.mdi.mdi-chevron-down
+        span.item-text= seeMore
+    .sidebar-section
+      .sidebar-item
+        i.item-icon.mdi.mdi-settings
+        span.item-text= settings
+      .sidebar-item
+        i.item-icon.mdi.mdi-help-circle
+        span.item-text= help
+      .sidebar-item
+        i.item-icon.mdi.mdi-comment-alert
+        span.item-text= sendComments
+    .sidebar-section
+      .fast-sets
+        a.fast-set(href="../ar/index.html") عربية
+        a.fast-set(href="../fr/index.html") Français
+        a.fast-set(href="../en/index.html") English
+
 doctype html
 html(dir=htmlDir)
   head
@@ -25,77 +110,6 @@ html(dir=htmlDir)
         i.mdi.mdi-bell.icon
         img.header-avatar(src='../assets/sample_images/avatar.png')
     .under-header
-      #main-sidebar.sidebar
-        .sidebar-section
-          a.sidebar-item.active(href="index.html")
-            i.item-icon.mdi.mdi-home
-            span.item-text= home
-          .sidebar-item
-            i.item-icon.mdi.mdi-fire
-            span.item-text= trendings
-          a.sidebar-item(href="sectors.html")
-            i.item-icon.mdi.mdi-youtube
-            span.item-text= subjects
-        .sidebar-section
-          .sidebar-section-title= library
-          a.sidebar-item(href="playlist.html")
-            i.item-icon.mdi.mdi-history
-            span.item-text= history
-          a.sidebar-item(href="playlist.html")
-            i.item-icon.mdi.mdi-clock
-            span.item-text= watchLater
-          a.sidebar-item(href="playlist.html")
-            i.item-icon.mdi.mdi-thumb-up
-            span.item-text= likedVideos
-        .sidebar-section
-          .sidebar-section-title= subjects
-          a.sidebar-item.live(href="sector.html")
-            img.item-icon(src='../assets/sample_images/english.jpeg')
-            span.item-text= english
-            i.item-live_icon.mdi.mdi-access-point
-          a.sidebar-item(href="sector.html")
-            img.item-icon(src='../assets/sample_images/math.jpeg')
-            span.item-text= maths
-            i.item-live_icon.mdi.mdi-access-point
-            .item-info-number 8
-          a.sidebar-item(href="sector.html")
-            img.item-icon(src='../assets/sample_images/physics.jpeg')
-            span.item-text= physics
-            i.item-live_icon.mdi.mdi-access-point
-            .item-info-number 2
-          .sidebar-item
-            i.item-icon.mdi.mdi-chevron-down
-            span.item-text= seeMore
-        .sidebar-section
-          .sidebar-section-title= chapters
-          a.sidebar-item.live(href="playlist.html")
-            img.item-icon(src='../assets/sample_images/cn.jpg')
-            span.item-text Nombres Complexes
-            i.item-live_icon.mdi.mdi-access-point
-          a.sidebar-item(href="playlist.html")
-            img.item-icon(src='../assets/sample_images/rl.png')
-            span.item-text Ciruit RL
-            i.item-live_icon.mdi.mdi-access-point
-          a.sidebar-item(href="playlist.html")
-            img.item-icon(src='../assets/sample_images/philo.png')
-            span.item-text الإنية والغيرية
-            i.item-live_icon.mdi.mdi-access-point
-          .sidebar-item
-            i.item-icon.mdi.mdi-chevron-down
-            span.item-text= seeMore
-        .sidebar-section
-          .sidebar-item
-            i.item-icon.mdi.mdi-settings
-            span.item-text= settings
-          .sidebar-item
-            i.item-icon.mdi.mdi-help-circle
-            span.item-text= help
-          .sidebar-item
-            i.item-icon.mdi.mdi-comment-alert
-            span.item-text= sendComments
-        .sidebar-section
-          .fast-sets
-            a.fast-set(href="../ar/index.html") عربية
-            a.fast-set(href="../fr/index.html") Français
+      block sidebar
       block content
       script(src="../assets/js/theme.js")

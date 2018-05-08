@@ -1,101 +1,50 @@
 extends ../template
 
+block sidebar
+  +main-sidebar('index')
+
 block content
   .page-wrapper
-    .page-content
-      .page-section
-        .page-section-header
-          img.page-section-image(src='../assets/sample_images/english.jpeg')
-          a.page-section-title(href="sector.html")= english
-          .page-section-caption= suggestions
-          .page-section-action= buy
-          i.page-section-close.mdi.mdi-close
-        .page-section-list
-          a.page-section-item(href="video.html")
-            .page-item-thumbnail
-              img.item-thumbnail-image(src='../assets/sample_images/v1.jpeg')
-              i.item-thumbnail-label.item-thumbnail-action.mdi.mdi-clock
-              .item-thumbnail-label.item-thumbnail-duration 8:01
-            .page-item-title عرض شكب عالباك
-            .page-item-author فريق التسويق
-            .page-item-details
-              .item-details-first 1 مليون مشاهدة
-              .item-details-second قبل 50 دقيقة
-          a.page-section-item(href="video.html")
-            .page-item-thumbnail
-              img.item-thumbnail-image(src='../assets/sample_images/v2.jpeg')
-              i.item-thumbnail-label.item-thumbnail-action.mdi.mdi-clock
-              .item-thumbnail-label.item-thumbnail-duration 13:31
-            .page-item-title  نصائح لتلاميذ بكالوريا آداب
-            .page-item-author صابر بوزايدة
-            .page-item-details
-              .item-details-first 500 ألف مشاهدة
-              .item-details-second قبل أسبوع
-          a.page-section-item(href="video.html")
-            .page-item-thumbnail
-              img.item-thumbnail-image(src='../assets/sample_images/v3.jpeg')
-              i.item-thumbnail-label.item-thumbnail-action.mdi.mdi-clock
-              .item-thumbnail-label.item-thumbnail-duration 9:21
-            .page-item-title 03_نعملو قهوة: نصائح في قراءة الكتب 
-            .page-item-author تقي الدين بن مسعود
-            .page-item-details
-              .item-details-first 4.4 ألف مشاهدة
-              .item-details-second قبل سنتين
-          a.page-section-item(href="video.html")
-            .page-item-thumbnail
-              img.item-thumbnail-image(src='../assets/sample_images/v4.jpeg')
-              i.item-thumbnail-label.item-thumbnail-action.mdi.mdi-clock
-              .item-thumbnail-label.item-thumbnail-duration 10:49
-            .page-item-title Comment faire les limites de la fonction log ?
-            .page-item-author تقي الدين بن مسعود
-            .page-item-details
-              .item-details-first 158 ألف مشاهدة
-              .item-details-second قبل 4 سنوات
-      .page-section
-        .page-section-header
-          img.page-section-image(src='../assets/sample_images/math.jpeg')
-          .page-section-title= maths
-          .page-section-caption= suggestions
-          .page-section-action= buy
-          i.page-section-close.mdi.mdi-close
-        .page-section-list
-          a.page-section-item(href="video.html")
-            .page-item-thumbnail
-              img.item-thumbnail-image(src='../assets/sample_images/v1.jpeg')
-              i.item-thumbnail-label.item-thumbnail-action.mdi.mdi-clock
-              .item-thumbnail-label.item-thumbnail-duration 8:01
-            .page-item-title عرض شكب عالباك
-            .page-item-author فريق التسويق
-            .page-item-details
-              .item-details-first 1 مليون مشاهدة
-              .item-details-second قبل 50 دقيقة
-          a.page-section-item(href="video.html")
-            .page-item-thumbnail
-              img.item-thumbnail-image(src='../assets/sample_images/v2.jpeg')
-              i.item-thumbnail-label.item-thumbnail-action.mdi.mdi-clock
-              .item-thumbnail-label.item-thumbnail-duration 13:31
-            .page-item-title  نصائح لتلاميذ بكالوريا آداب
-            .page-item-author صابر بوزايدة
-            .page-item-details
-              .item-details-first 500 ألف مشاهدة
-              .item-details-second قبل أسبوع
-          a.page-section-item(href="video.html")
-            .page-item-thumbnail
-              img.item-thumbnail-image(src='../assets/sample_images/v3.jpeg')
-              i.item-thumbnail-label.item-thumbnail-action.mdi.mdi-clock
-              .item-thumbnail-label.item-thumbnail-duration 9:21
-            .page-item-title 03_نعملو قهوة: نصائح في قراءة الكتب 
-            .page-item-author تقي الدين بن مسعود
-            .page-item-details
-              .item-details-first 4.4 ألف مشاهدة
-              .item-details-second قبل سنتين
-          a.page-section-item(href="video.html")
-            .page-item-thumbnail
-              img.item-thumbnail-image(src='../assets/sample_images/v4.jpeg')
-              i.item-thumbnail-label.item-thumbnail-action.mdi.mdi-clock
-              .item-thumbnail-label.item-thumbnail-duration 10:49
-            .page-item-title Comment faire les limites de la fonction log ?
-            .page-item-author تقي الدين بن مسعود
-            .page-item-details
-              .item-details-first 158 ألف مشاهدة
-              .item-details-second قبل 4 سنوات
+    .page-paper.transparent
+      .page-content
+        .page-section
+          .page-section-header
+            img.page-section-image(src='../assets/sample_images/english.jpeg')
+            a.page-section-title(href="sector.html")= english
+            .page-section-caption= suggestions
+            .page-section-action= buy
+            i.page-section-close.mdi.mdi-close
+          .page-section-list
+            each i in [1,2,3,4]
+              a.video-card(href="video.html")
+                .video-card-thumbnail
+                  img.video-card-image(src='../assets/sample_images/v1.jpeg')
+                  i.video-card-action.mdi.mdi-clock
+                  .video-card-duration 8:01
+                .video-card-info 
+                  .video-card-title عرض شكب عالباك
+                  .video-card-author فريق التسويق
+                  .video-card-details
+                    div 1 مليون مشاهدة
+                    div قبل 50 دقيقة
+        .page-section
+          .page-section-header
+            img.page-section-image(src='../assets/sample_images/math.jpeg')
+            .page-section-title= maths
+            .page-section-caption= suggestions
+            .page-section-action= buy
+            i.page-section-close.mdi.mdi-close
+          .page-section-list
+            each i in [1,2,3,4]
+              a.video-card(href="video.html")
+                .video-card-thumbnail
+                  img.video-card-image(src='../assets/sample_images/v1.jpeg')
+                  i.video-card-action.mdi.mdi-clock
+                  .video-card-duration 8:01
+                .video-card-info 
+                  .video-card-title عرض شكب عالباك
+                  .video-card-author فريق التسويق
+                  .video-card-details
+                    div 1 مليون مشاهدة
+                    div قبل 50 دقيقة
+            

@@ -11,6 +11,10 @@
   }
 }
 
+.sidebar.free ~ .page-wrapper {
+  margin: 0;
+}
+
 html[dir="rtl"] .page-wrapper {
   margin-left: 0;
   margin-right: 240px;
@@ -19,15 +23,21 @@ html[dir="rtl"] .page-wrapper {
   }
 }
 
+.page-paper {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  &.transparent {
+    background-color: transparent;
+  }
+}
+
 .page-content {
-  padding: 0 104px;
-  align-self: stretch;
+  // padding: 0 104px;
+  align-self: center;
+  width: $contentWidth;
   flex: 1;
   padding-top: 24px;
-
-  &.white-page {
-    background-color: #fff;
-  }
 
   &.nopadding {
     padding-left: 0;
@@ -79,11 +89,18 @@ html[dir="rtl"] .page-wrapper {
     @include btn-primary;
   }
 
-  .page-section-close {
+
+  .page-section-close, .page-section-icon {
     @include text-hint;
+    @include spaced-icon;
+
     cursor: pointer;
     &:hover {
       @include text-secondary;
+    }
+
+    &.active {
+      @include text-primary;
     }
   }
 }
@@ -94,120 +111,16 @@ html[dir="rtl"] .page-wrapper {
   flex-direction: row;
   flex-wrap: wrap;
 
-  .page-section-item {
-    display: flex;
+  &.view-list {
     flex-direction: column;
-    align-items: stretch;
-    width: 210px;
-    margin-bottom: 24px;
-    margin-right: 4px;
-    margin-left: 4px;
-    cursor: pointer;
-  }
-
-  .page-item-thumbnail {
-    height: 118px;
-    position: relative;
-    .item-thumbnail-image {
-      width: 100%;
-      height: 100%;
-    }
-
-    .item-thumbnail-label {
-      background-color: rgba(0,0,0,.67);
-      color: white;
-      border-radius: 2px;
-      position: absolute;
-    }
-
-    .item-thumbnail-action {
-      display: none;
-      padding: 4px;
-      top: 4px;
-      right: 4px;
-    }
-
-    .item-thumbnail-duration {
-      padding: 2px 4px;
-      bottom: 4px;
-      right: 4px;
-      font-size: 12px;
-      font-weight: 600;
-    }
-
-    .item-thumbnail-playlist_play {
-      top: 0;
-      right: 0;
-      width: 100%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-transform: uppercase;
-      display: none;
-      z-index: 4;
-      .item-playlist-play_icon.mdi.mdi-play {
-        margin: 8px;
+    .video-card {
+      @extend .video-card-landscape;
+      padding-bottom: 24px;
+      border-bottom: 1px solid $colorDivider;
+      .video-card-thumbnail {
+        width: 246px;
+        height: 138px;
       }
     }
-
-    .item-thumbnail-playlist_info {
-      top: 0;
-      right: 0px;
-      width: 40%;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      z-index: 3;
-      .item-playlist-videos_number {
-        margin: 8px;
-        @include text-subheading;
-      }
-    }
-  }
-
-  .page-section-item:hover .page-item-thumbnail .item-thumbnail-action,
-  .page-section-item:hover .page-item-thumbnail .item-thumbnail-playlist_play {
-    display: flex;
-  }
-
-  .page-item-title {
-    margin: 8px 0;  
-  }
-
-  .page-item-author {
-    @include text-caption;
-    @include text-hint;
-    &:hover {
-      @include text-secondary;
-    }
-  }
-
-  .page-item-details {
-    @include text-caption;
-    @include text-hint;
-    display: flex;
-    flex-direction: row;
-    align-items: baseline;
-
-    .item-details-first::after {
-      content: '•';
-      margin: 0 4px;
-    }
-  }
-}
-
-html[dir="rtl"] .page-content .page-section .page-section-list .page-item-thumbnail {
-
-  .item-thumbnail-label {
-    right: inherit;
-    left: 4px;
-  }
-
-  .item-thumbnail-playlist_info, .item-thumbnail-playlist_play {
-    right: inherit;
-    left: 0px;
   }
 }

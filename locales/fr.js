@@ -24,5 +24,7 @@ module.exports = {
   english: 'Anglais',
   maths: 'Maths',
   physics: 'Physique',
-  nextVideo: 'cours suivant'
+  nextVideo: 'À suivre',
+  lives: 'Séances En Direct',
+  recordings: 'Enregistrements',
 }
