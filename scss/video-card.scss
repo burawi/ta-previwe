@@ -112,6 +112,23 @@
         margin: 0 4px;
       }
     }
+
+    .video-card-new {
+      padding: 2px 4px;
+      background-color: rgba(237, 237, 237, 0.6);
+      font-weight: 500;
+      text-transform: capitalize;
+      @include text-caption;
+      @include text-secondary;
+    }
+
+    .video-card-live {
+      $color: #e52117;
+      padding: 2px 4px;
+      border: 1px solid $color;
+      color: $color;
+      text-transform: uppercase;
+    }
   }
 
   &.video-card-landscape {

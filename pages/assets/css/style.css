@@ -104,6 +104,55 @@ header .header-icons {
     background-color: #2ba7df;
     border: 1px solid #d3d3d3; }
 
+header .header-user-corner {
+  position: relative; }
+  header .header-user-corner .user-corner-card {
+    position: absolute;
+    width: 300px;
+    left: -300px;
+    top: 0;
+    background-color: #FFF;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    color: rgba(0, 0, 0, 0.87);
+    box-shadow: 0px 0px 14px gray; }
+    header .header-user-corner .user-corner-card .user-corner-card-header {
+      background-color: #eeeeee;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 16px; }
+      header .header-user-corner .user-corner-card .user-corner-card-header .user-corner-card-header-text {
+        display: flex;
+        flex-direction: column;
+        padding: 0 16px; }
+        header .header-user-corner .user-corner-card .user-corner-card-header .user-corner-card-header-text .user-corner-card-title {
+          font-size: 16px; }
+    header .header-user-corner .user-corner-card .user-corner-card-content {
+      padding: 8px 0;
+      display: flex;
+      flex-direction: column; }
+      header .header-user-corner .user-corner-card .user-corner-card-content .user-corner-card-item {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        height: 40px;
+        padding: 0 16px;
+        text-transform: capitalize; }
+        header .header-user-corner .user-corner-card .user-corner-card-content .user-corner-card-item:hover {
+          cursor: pointer;
+          background-color: #f5f5f5; }
+        header .header-user-corner .user-corner-card .user-corner-card-content .user-corner-card-item .user-corner-card-item-icon {
+          width: 56px;
+          color: rgba(0, 0, 0, 0.38); }
+  header .header-user-corner:hover .user-corner-card {
+    display: flex; }
+
+html[dir="rtl"] header .header-user-corner .user-corner-card {
+  left: inherit;
+  right: -300px; }
+
 .sidebar {
   background-color: #f5f5f5;
   width: 240px;
@@ -397,6 +446,18 @@ html[dir="rtl"] .page-wrapper {
       .video-card .video-card-info .video-card-details > *:not(:last-child)::after {
         content: '•';
         margin: 0 4px; }
+    .video-card .video-card-info .video-card-new {
+      padding: 2px 4px;
+      background-color: rgba(237, 237, 237, 0.6);
+      font-weight: 500;
+      text-transform: capitalize;
+      font-size: 12px;
+      color: rgba(0, 0, 0, 0.54); }
+    .video-card .video-card-info .video-card-live {
+      padding: 2px 4px;
+      border: 1px solid #e52117;
+      color: #e52117;
+      text-transform: uppercase; }
   .video-card.video-card-landscape, .page-content .page-section .page-section-list.view-list .video-card {
     flex-direction: row; }
     .video-card.video-card-landscape .video-card-thumbnail, .page-content .page-section .page-section-list.view-list .video-card .video-card-thumbnail {
@@ -634,6 +695,8 @@ html[dir="rtl"] .video-card .video-card-thumbnail .video-card-playlist_info, htm
       .video-page .video-page-sidebar .video-card .video-card-thumbnail {
         width: 168px;
         height: 94px; }
+      .video-page .video-page-sidebar .video-card .video-card-title {
+        margin: 0; }
 
 html[dir="rtl"] .video-page .video-page-sidebar {
   padding-right: 24px;

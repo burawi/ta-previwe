@@ -53,3 +53,7 @@ block content
                 .video-card-title 01_interaction onde matière : la diffraction 
                 .video-card-author صابر بوزايدة
                 .video-card-details 71 ألف مشاهدة
+                if i % 2 == 0
+                  .video-card-new= fresh
+                else 
+                  .video-card-live= live

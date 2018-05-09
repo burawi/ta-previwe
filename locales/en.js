@@ -27,4 +27,8 @@ module.exports = {
   nextVideo: 'Up next',
   lives: 'lives',
   recordings: 'Recordings',
+  fresh: 'new',
+  live: 'live',
+  profile: 'profile',
+  logout: 'logout',
 }

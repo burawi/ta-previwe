@@ -110,3 +110,68 @@ header .header-icons {
   }
 }
 
+header .header-user-corner {
+  position: relative;
+  
+  .user-corner-card {
+    position: absolute;
+    width: 300px;
+    left: -300px;
+    top: 0;
+    background-color: #FFF;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    @include text-primary;
+    box-shadow: 0px 0px 14px gray;
+
+    .user-corner-card-header {
+      background-color: #eeeeee;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 16px;
+      .user-corner-card-header-text {
+        display: flex;
+        flex-direction: column;
+        padding: 0 16px;
+        .user-corner-card-title {
+          @include text-subheading;
+        }
+      }
+    }
+    .user-corner-card-content {
+      padding: 8px 0;
+      display: flex;
+      flex-direction: column;
+      .user-corner-card-item {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        height: 40px;
+        padding: 0 16px;
+        text-transform: capitalize;
+        &:hover {
+          cursor: pointer;
+          background-color: #f5f5f5;
+        }
+        .user-corner-card-item-icon {
+          width: 56px;
+          @include text-hint;
+        }
+      }
+    }
+  }
+
+  &:hover .user-corner-card {
+    display: flex;
+  }
+}
+
+html[dir="rtl"] header .header-user-corner {
+  .user-corner-card {
+    left: inherit;
+    right: -300px;
+  }
+}
+

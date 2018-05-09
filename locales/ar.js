@@ -27,4 +27,8 @@ module.exports = {
   physics: 'فيزياء',
   lives: 'الحصص المباشرة',
   recordings: 'التسجيلات',
+  fresh: 'جديد',
+  live: 'حصة مباشرة',
+  profile: 'صفحتي',
+  logout: 'خروج',
 }

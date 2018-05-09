@@ -108,7 +108,21 @@ html(dir=htmlDir)
       .header-icons
         i.mdi.mdi-apps.icon
         i.mdi.mdi-bell.icon
-        img.header-avatar(src='../assets/sample_images/avatar.png')
+        .header-user-corner
+          img.header-avatar(src='../assets/sample_images/avatar.png')
+          .user-corner-card
+            .user-corner-card-header
+              img.header-avatar(src='../assets/sample_images/avatar.png')
+              .user-corner-card-header-text
+                .user-corner-card-title Mohamed Ben Ahmed
+                .user-corner-card-subtitle mohamedbenahmed@gmail.com
+            .user-corner-card-content
+              .user-corner-card-item
+                .user-corner-card-item-icon.mdi.mdi-account-box
+                .user-corner-card-item-text= profile
+              .user-corner-card-item
+                .user-corner-card-item-icon.mdi.mdi-logout-variant
+                .user-corner-card-item-text= logout
     .under-header
       block sidebar
       block content

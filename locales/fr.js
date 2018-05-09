@@ -27,4 +27,8 @@ module.exports = {
   nextVideo: 'À suivre',
   lives: 'Séances En Direct',
   recordings: 'Enregistrements',
+  fresh: 'nouveau',
+  live: 'Séance en direct',
+  profile: 'profile',
+  logout: 'Déconnexion',
 }
