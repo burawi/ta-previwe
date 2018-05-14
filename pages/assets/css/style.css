@@ -64,7 +64,8 @@ header .search-box {
     border-radius: 2px 0px 0px 2px;
     border: 1px solid #d3d3d3;
     border-right-width: 0;
-    padding: 2px 12px; }
+    padding: 2px 12px;
+    width: 50%; }
     header .search-box input:focus {
       border-color: #0404de;
       border-width: 1px;
@@ -246,7 +247,6 @@ html[dir="rtl"] .sidebar .sidebar-item .item-icon {
   margin-left: 240px;
   height: 100%;
   box-sizing: border-box;
-  overflow-y: scroll;
   -webkit-transition: all .5s ease-out;
   /* Safari */
   transition: all .5s ease-out; }
@@ -265,7 +265,9 @@ html[dir="rtl"] .page-wrapper {
 .page-paper {
   background-color: #fff;
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  flex: 1;
+  overflow-y: scroll; }
   .page-paper.transparent {
     background-color: transparent; }
 

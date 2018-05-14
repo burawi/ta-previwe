@@ -2,7 +2,6 @@
   margin-left: 240px;
   height: 100%;
   box-sizing: border-box;
-  overflow-y: scroll;
   -webkit-transition: all .5s ease-out; /* Safari */
   transition: all .5s ease-out;
 
@@ -27,6 +26,8 @@ html[dir="rtl"] .page-wrapper {
   background-color: #fff;
   display: flex;
   flex-direction: column;
+  flex: 1;
+  overflow-y: scroll;
   &.transparent {
     background-color: transparent;
   }
