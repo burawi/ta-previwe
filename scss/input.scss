@@ -1,0 +1,61 @@
+@keyframes input-focus {
+  from {
+    width: 0%;
+    left: 50%;
+  }
+  to {
+    width: 100%;
+    left: 0;
+  }
+}
+
+.input-basic {
+  position: relative;
+  height: 40px;
+  margin: 8px;
+  border-bottom: 1px solid #888888;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  input {
+    outline: none;
+    border: none;
+    background-color: transparent;
+    height: 100%;
+    order: 2;
+
+    &:focus {
+      + .input-decoration {
+        position: absolute;
+        bottom: -2px;
+        height: 2px;
+        background-color: rgba(0,0,0,.87);
+        width: 100%;
+        left: 0;
+        animation-name: input-focus;
+        animation-duration: 0.5s;
+      }
+
+      ~ .input-icon {
+        @include text-primary;
+      }
+
+      ~ .input-clear {
+        @include text-primary;
+      }
+    }
+  }
+
+  .input-icon {
+    order: 1;
+    padding: 8px;
+    @include text-hint;
+  }
+  
+  .input-clear {
+    order: 3;
+    padding: 8px;
+    @include text-hint;
+  }
+}

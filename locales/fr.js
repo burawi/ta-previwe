@@ -31,4 +31,12 @@ module.exports = {
   live: 'Séance en direct',
   profile: 'profile',
   logout: 'Déconnexion',
+  watchHistory: 'Histprique',
+  searchHistory: 'Historique des recherches',
+  comments: 'Commentaires',
+  searchInHistory: 'Rechercher dans l\'historique',
+  manageActivity: 'Gérer les activités',
+  clearHistory: 'Effacer l\'historique',
+  resumeHistory: 'Réactiver l\'historique',
+  stopHistory: 'Desactiver l\'historique'
 }

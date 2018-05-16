@@ -15,6 +15,96 @@
   flex-direction: column;
   align-items: center; }
 
+@keyframes input-focus {
+  from {
+    width: 0%;
+    left: 50%; }
+  to {
+    width: 100%;
+    left: 0; } }
+
+.input-basic {
+  position: relative;
+  height: 40px;
+  margin: 8px;
+  border-bottom: 1px solid #888888;
+  display: flex;
+  flex-direction: row;
+  align-items: center; }
+  .input-basic input {
+    outline: none;
+    border: none;
+    background-color: transparent;
+    height: 100%;
+    order: 2; }
+    .input-basic input:focus + .input-decoration {
+      position: absolute;
+      bottom: -2px;
+      height: 2px;
+      background-color: rgba(0, 0, 0, 0.87);
+      width: 100%;
+      left: 0;
+      animation-name: input-focus;
+      animation-duration: 0.5s; }
+    .input-basic input:focus ~ .input-icon {
+      color: rgba(0, 0, 0, 0.87); }
+    .input-basic input:focus ~ .input-clear {
+      color: rgba(0, 0, 0, 0.87); }
+  .input-basic .input-icon {
+    order: 1;
+    padding: 8px;
+    color: rgba(0, 0, 0, 0.38); }
+  .input-basic .input-clear {
+    order: 3;
+    padding: 8px;
+    color: rgba(0, 0, 0, 0.38); }
+
+.history-page {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 8px 16px; }
+  .history-page .history-list {
+    flex: 1;
+    margin: 24px; }
+    .history-page .history-list .history-card .video-card-thumbnail {
+      width: 246px;
+      height: 138px; }
+
+.history-type-list {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  margin: 16px 0; }
+  .history-type-list .list-item {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 50px;
+    padding: 0 16px; }
+    .history-type-list .list-item.list-title {
+      font-size: 16px; }
+    .history-type-list .list-item .list-item-text {
+      flex: 1;
+      cursor: pointer; }
+    .history-type-list .list-item .list-item-text::first-letter {
+      text-transform: uppercase; }
+
+.history-actions {
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.54); }
+  .history-actions .history-action {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 37px;
+    cursor: pointer;
+    padding: 0 16px; }
+
 header {
   height: 56px;
   position: fixed;
@@ -431,7 +521,8 @@ html[dir="rtl"] .page-wrapper {
   .video-card .video-card-info {
     display: flex;
     flex-direction: column;
-    align-items: flex-start; }
+    align-items: flex-start;
+    position: relative; }
     .video-card .video-card-info .video-card-title {
       margin: 8px 0; }
     .video-card .video-card-info .video-card-author {
@@ -448,6 +539,10 @@ html[dir="rtl"] .page-wrapper {
       .video-card .video-card-info .video-card-details > *:not(:last-child)::after {
         content: '•';
         margin: 0 4px; }
+    .video-card .video-card-info .video-card-description {
+      font-size: 12px;
+      color: rgba(0, 0, 0, 0.38);
+      margin-top: 16px; }
     .video-card .video-card-info .video-card-new {
       padding: 2px 4px;
       background-color: rgba(237, 237, 237, 0.6);
@@ -460,10 +555,20 @@ html[dir="rtl"] .page-wrapper {
       border: 1px solid #e52117;
       color: #e52117;
       text-transform: uppercase; }
+    .video-card .video-card-info .video-card-corner-icon {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      cursor: pointer;
+      color: rgba(0, 0, 0, 0.38); }
+      .video-card .video-card-info .video-card-corner-icon:hover {
+        color: rgba(0, 0, 0, 0.54); }
   .video-card.video-card-landscape, .page-content .page-section .page-section-list.view-list .video-card {
     flex-direction: row; }
     .video-card.video-card-landscape .video-card-thumbnail, .page-content .page-section .page-section-list.view-list .video-card .video-card-thumbnail {
       margin: 0 8px; }
+    .video-card.video-card-landscape .video-card-info, .page-content .page-section .page-section-list.view-list .video-card .video-card-info {
+      flex: 1; }
 
 html[dir="rtl"] .video-card .video-card-thumbnail .video-card-label, html[dir="rtl"] .video-card .video-card-thumbnail .video-card-duration, html[dir="rtl"] .video-card .video-card-thumbnail .video-card-action, html[dir="rtl"] .video-card .video-card-thumbnail .video-card-playlist_play, html[dir="rtl"] .video-card .video-card-thumbnail .video-card-playlist_info {
   right: inherit;
@@ -472,6 +577,10 @@ html[dir="rtl"] .video-card .video-card-thumbnail .video-card-label, html[dir="r
 html[dir="rtl"] .video-card .video-card-thumbnail .video-card-playlist_info, html[dir="rtl"] .video-card .video-card-thumbnail .video-card-playlist_play {
   right: inherit;
   left: 0px; }
+
+html[dir="rtl"] .video-card .video-card-info .video-card-corner-icon {
+  right: inherit;
+  left: 8px; }
 
 .playlist-page {
   display: flex;

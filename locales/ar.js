@@ -31,4 +31,12 @@ module.exports = {
   live: 'حصة مباشرة',
   profile: 'صفحتي',
   logout: 'خروج',
+  watchHistory: 'سجل المشاهدة',
+  searchHistory: 'سجل البحث',
+  comments: 'التعاليق',
+  searchInHistory: 'البحث في سجل المشاهدة',
+  manageActivity: 'إدارة الأنشطة',
+  clearHistory: 'حذف كل السجل',
+  resumeHistory: 'إستئناف السجل',
+  stopHistory: 'توقيف السجل'
 }

@@ -1,0 +1,60 @@
+.history-page {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 8px 16px;
+  .history-list {
+    flex: 1;
+    margin: 24px;
+    .history-card {
+      .video-card-thumbnail {
+        width: 246px;
+        height: 138px;
+      }
+    }
+  }
+}
+
+.history-type-list {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  margin: 16px 0;
+  .list-item {
+    border-bottom: 1px solid $colorDivider;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 50px;
+    padding: 0 16px;
+
+    &.list-title {
+      @include text-subheading;
+    }
+
+    .list-item-text {
+      flex: 1;
+      cursor: pointer;
+    }
+
+    .list-item-text::first-letter {
+      text-transform: uppercase;
+    }
+  }
+}
+
+.history-actions {
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  @include text-subheading;
+  @include text-secondary;
+  .history-action {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 37px;
+    cursor: pointer;
+    padding: 0 16px;
+  }
+}

@@ -31,4 +31,12 @@ module.exports = {
   live: 'live',
   profile: 'profile',
   logout: 'logout',
+  watchHistory: 'Watch history',
+  searchHistory: 'Search history',
+  comments: 'Comments',
+  searchInHistory: 'Search in history',
+  manageActivity: 'Manage all activity',
+  clearHistory: 'Clear all history',
+  resumeHistory: 'Resume history',
+  stopHistory: 'Pause history'
 }

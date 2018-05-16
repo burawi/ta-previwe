@@ -87,6 +87,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    position: relative;
 
     .video-card-title {
       margin: 8px 0;
@@ -113,6 +114,12 @@
       }
     }
 
+    .video-card-description {
+      @include text-caption;
+      @include text-hint;
+      margin-top: 16px;
+    }
+
     .video-card-new {
       padding: 2px 4px;
       background-color: rgba(237, 237, 237, 0.6);
@@ -129,12 +136,26 @@
       color: $color;
       text-transform: uppercase;
     }
+
+    .video-card-corner-icon {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      cursor: pointer;
+      @include text-hint;
+      &:hover {
+        @include text-secondary;
+      }
+    }
   }
 
   &.video-card-landscape {
     flex-direction: row;
     .video-card-thumbnail {
       margin: 0 8px;
+    }
+    .video-card-info {
+      flex: 1;
     }
   }
 }
@@ -150,6 +171,13 @@ html[dir="rtl"] {
       .video-card-playlist_info, .video-card-playlist_play {
         right: inherit;
         left: 0px;
+      }
+    }
+
+    .video-card-info {
+      .video-card-corner-icon {
+        right: inherit;
+        left: 8px;
       }
     }
   }

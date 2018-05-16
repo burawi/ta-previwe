@@ -1,0 +1,49 @@
+extends ../template
+
+block sidebar
+  +main-sidebar('history')
+
+block content
+  .page-wrapper
+    .history-page
+      .history-list
+        each i in [1,2,3,4,5,6,7]
+          .video-card.video-card-landscape.history-card
+            .video-card-thumbnail
+              img.video-card-image(src='../assets/sample_images/v1.jpeg')
+              .video-card-duration 8:01
+            .video-card-info 
+              .video-card-corner-icon.mdi.mdi-close
+              .video-card-title عرض شكب عالباك
+              .video-card-author فريق التسويق
+              .video-card-details
+                div 1 مليون مشاهدة
+                div قبل 50 دقيقة
+              .video-card-description هذا وصف وهمي سنكتسح السوق وسنكون أحسن شركة في العالم
+      .history-sidebar
+        .input-basic
+          input(placeholder=searchInHistory)
+          .input-decoration
+          .input-icon.mdi.mdi-magnify
+          .input-clear.mdi.mdi-close
+        .history-type-list
+          .list-item.list-title= history
+          .list-item 
+            label(for="history-type-wh").list-item-text= watchHistory
+            input(id="history-type-wh",type="radio")
+          .list-item 
+            label(for="history-type-sh").list-item-text= searchHistory
+            input(id="history-type-sh", type="radio")
+          .list-item 
+            label(for="history-type-c").list-item-text= comments
+            input(id="history-type-c", type="radio")
+          .list-item 
+            label(for="history-type-f").list-item-text= forum
+            input(id="history-type-f", type="radio")
+          .list-item 
+            label(for="history-type-l").list-item-text= lives
+            input(id="history-type-l", type="radio")
+        .history-actions
+          .history-action= clearHistory
+          .history-action= resumeHistory
+          .history-action= manageActivity
