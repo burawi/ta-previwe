@@ -1,0 +1,22 @@
+<!DOCTYPE html><html dir="rtl"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><title>TakiAcademy</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="shortcut icon" href="../assets/img/logo.png"><link href="https://fonts.googleapis.com/css?family=Roboto+Condensed|Tajawal:500" rel="stylesheet"><link rel="stylesheet" href="https://cdn.materialdesignicons.com/2.3.54/css/materialdesignicons.min.css"><link rel="stylesheet" href="../assets/css/style.css"></head><body id="auth-page"><div class="auth-card"><div class="auth-logo"><img class="auth-logo-img" src="../assets/img/logo.png"><div class="auth-logo-text">TakiAcademy</div></div><div class="auth-title">إنشاء حسابك في تقي أكاديمي</div><div class="auth-subtitle">للمتابعة إلى تقي أكاديمي</div><div class="auth-form"><div class="auth-row"><div class="auth-field"><input placeholder=" "><label>الإسم</label></div><div class="auth-field"><input placeholder=" "><label>اللقب</label></div></div><div class="auth-field"><input placeholder=" "><label>بريدك الإلكتروني</label></div><div class="auth-helper">يلزمك تأكيد ملكيتك لهذا البريد الالكتروني.</div><div class="auth-row"><div class="auth-field"><input placeholder=" " id="password" type="password"><label>كلمة المرور</label></div><div class="auth-field"><input placeholder=" " id="confirm-password" type="password"><label>تأكيد كلمة المرور</label></div><div class="mdi mdi-eye-off" id="toggle-password"></div></div><div class="auth-helper">استخدم 8 أحرف أو أكثر باستعمال مزيج من الأحرف والأرقام والرموز</div></div><div class="auth-actions"><a class="auth-alternative" href="auth.html">تسجيل الدخول بدلاً من ذلك.</a><div class="flex"></div><div class="auth-submit">التالي</div></div></div><div class="auth-footer"><div class="flex"></div><div class="auth-footer-links"><a class="auth-footer-link" href="../ar/register.html">عربية</a><a class="auth-footer-link" href="../fr/register.html">Français</a><a class="auth-footer-link" href="../en/register.html">English</a></div></div><script>var showPass = false;
+var passToggler = document.getElementById('toggle-password');
+var passField = document.getElementById('password');
+var confirmPassField = document.getElementById('confirm-password');
+passToggler.addEventListener('click', function(e) {
+  showPass = !showPass;
+  setPassState();
+});
+
+function setPassState() {
+  if(showPass) {
+    passToggler.classList.remove('mdi-eye-off');
+    passToggler.classList.add('mdi-eye');
+    passField.type = 'text';
+    confirmPassField.type = 'text';
+  } else {
+    passToggler.classList.remove('mdi-eye');
+    passToggler.classList.add('mdi-eye-off');
+    passField.type = 'password';
+    confirmPassField.type = 'password';
+  }
+}</script></body></html>

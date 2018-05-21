@@ -1,0 +1,33 @@
+doctype html
+html(dir=htmlDir)
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    title TakiAcademy
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel="shortcut icon" href="../assets/img/logo.png")
+    link(href='https://fonts.googleapis.com/css?family=Roboto+Condensed|Tajawal:500', rel='stylesheet')
+    link(rel='stylesheet', href='https://cdn.materialdesignicons.com/2.3.54/css/materialdesignicons.min.css')
+    link(rel='stylesheet', href='../assets/css/style.css')
+  body#auth-page
+    .auth-card
+      .auth-logo
+        img.auth-logo-img(src="../assets/img/logo.png")
+        .auth-logo-text TakiAcademy
+      .auth-title= login
+      .auth-subtitle= continueToTA
+      .auth-form
+        .auth-field
+          input(placeholder=" ")
+          label= email
+      .auth-help= forgotMail
+      .auth-actions
+        a.auth-alternative(href="register.html")= createAccount
+        .flex
+        .auth-submit= next
+    .auth-footer
+      .flex
+      .auth-footer-links
+        a.auth-footer-link(href="../ar/auth.html") عربية
+        a.auth-footer-link(href="../fr/auth.html") Français
+        a.auth-footer-link(href="../en/auth.html") English

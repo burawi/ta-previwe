@@ -1,0 +1,22 @@
+<!DOCTYPE html><html dir="ltr"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><title>TakiAcademy</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="shortcut icon" href="../assets/img/logo.png"><link href="https://fonts.googleapis.com/css?family=Roboto+Condensed|Tajawal:500" rel="stylesheet"><link rel="stylesheet" href="https://cdn.materialdesignicons.com/2.3.54/css/materialdesignicons.min.css"><link rel="stylesheet" href="../assets/css/style.css"></head><body id="auth-page"><div class="auth-card"><div class="auth-logo"><img class="auth-logo-img" src="../assets/img/logo.png"><div class="auth-logo-text">TakiAcademy</div></div><div class="auth-title">Create your TakiAcademy Account</div><div class="auth-subtitle">to continue to TakiAcademy</div><div class="auth-form"><div class="auth-row"><div class="auth-field"><input placeholder=" "><label>first name</label></div><div class="auth-field"><input placeholder=" "><label>last name</label></div></div><div class="auth-field"><input placeholder=" "><label>Your email address</label></div><div class="auth-helper">You'll need to confirm that this email belongs to you.</div><div class="auth-row"><div class="auth-field"><input placeholder=" " id="password" type="password"><label>password</label></div><div class="auth-field"><input placeholder=" " id="confirm-password" type="password"><label>confirm password</label></div><div class="mdi mdi-eye-off" id="toggle-password"></div></div><div class="auth-helper">Use 8 or more characters with a mix of letters, numbers &amp; symbols</div></div><div class="auth-actions"><a class="auth-alternative" href="auth.html">sign in instead</a><div class="flex"></div><div class="auth-submit">Next</div></div></div><div class="auth-footer"><div class="flex"></div><div class="auth-footer-links"><a class="auth-footer-link" href="../ar/register.html">عربية</a><a class="auth-footer-link" href="../fr/register.html">Français</a><a class="auth-footer-link" href="../en/register.html">English</a></div></div><script>var showPass = false;
+var passToggler = document.getElementById('toggle-password');
+var passField = document.getElementById('password');
+var confirmPassField = document.getElementById('confirm-password');
+passToggler.addEventListener('click', function(e) {
+  showPass = !showPass;
+  setPassState();
+});
+
+function setPassState() {
+  if(showPass) {
+    passToggler.classList.remove('mdi-eye-off');
+    passToggler.classList.add('mdi-eye');
+    passField.type = 'text';
+    confirmPassField.type = 'text';
+  } else {
+    passToggler.classList.remove('mdi-eye');
+    passToggler.classList.add('mdi-eye-off');
+    passField.type = 'password';
+    confirmPassField.type = 'password';
+  }
+}</script></body></html>

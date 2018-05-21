@@ -1,0 +1,72 @@
+doctype html
+html(dir=htmlDir)
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    title TakiAcademy
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel="shortcut icon" href="../assets/img/logo.png")
+    link(href='https://fonts.googleapis.com/css?family=Roboto+Condensed|Tajawal:500', rel='stylesheet')
+    link(rel='stylesheet', href='https://cdn.materialdesignicons.com/2.3.54/css/materialdesignicons.min.css')
+    link(rel='stylesheet', href='../assets/css/style.css')
+  body#auth-page
+    .auth-card
+      .auth-logo
+        img.auth-logo-img(src="../assets/img/logo.png")
+        .auth-logo-text TakiAcademy
+      .auth-title= createYourAccount
+      .auth-subtitle= continueToTA
+      .auth-form
+        .auth-row
+          .auth-field
+            input(placeholder=" ")
+            label= firstName
+          .auth-field
+            input(placeholder=" ")
+            label= lastName
+        .auth-field
+          input(placeholder=" ")
+          label= yourEmail
+        .auth-helper= youllNeedCofirmEmail
+        .auth-row
+          .auth-field
+            input(placeholder=" ",id="password", type="password")
+            label= password
+          .auth-field
+            input(placeholder=" ",id="confirm-password", type="password")
+            label= confirmPassword
+          #toggle-password.mdi.mdi-eye-off
+        .auth-helper= passwordHelper
+      .auth-actions
+        a.auth-alternative(href="auth.html")= signinInstead
+        .flex
+        .auth-submit= next
+    .auth-footer
+      .flex
+      .auth-footer-links
+        a.auth-footer-link(href="../ar/register.html") عربية
+        a.auth-footer-link(href="../fr/register.html") Français
+        a.auth-footer-link(href="../en/register.html") English
+    script.
+      var showPass = false;
+      var passToggler = document.getElementById('toggle-password');
+      var passField = document.getElementById('password');
+      var confirmPassField = document.getElementById('confirm-password');
+      passToggler.addEventListener('click', function(e) {
+        showPass = !showPass;
+        setPassState();
+      });
+
+      function setPassState() {
+        if(showPass) {
+          passToggler.classList.remove('mdi-eye-off');
+          passToggler.classList.add('mdi-eye');
+          passField.type = 'text';
+          confirmPassField.type = 'text';
+        } else {
+          passToggler.classList.remove('mdi-eye');
+          passToggler.classList.add('mdi-eye-off');
+          passField.type = 'password';
+          confirmPassField.type = 'password';
+        }
+      }
