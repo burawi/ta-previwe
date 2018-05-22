@@ -109,6 +109,94 @@
         white-space: pre-wrap;
       }
     }
+
+    .video-comments {
+      display: flex;
+      flex-direction: column;
+      .comments-header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        @include text-subheading;
+        margin: 24px 0;
+      }
+
+      .comment {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        margin-bottom: 16px;
+
+        .comment-avatar {
+          width: 56px;
+          img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+          }
+        }
+
+        .comment-content {
+          display: flex;
+          flex-direction: column;
+          flex: 1;
+          
+          .input-basic {
+            margin: 0;
+          }
+
+          .comment-form-actions {
+            display: flex;
+            flex-direction: row;
+            .comment-submit {
+              @include btn-primary;
+            }
+          }
+
+          .comment-header {
+            @include text-caption;
+            display: flex;
+            flex-direction: row;
+
+            .comment-username {
+              font-weight: bold;
+            }
+            .comment-time {
+              @include text-hint;
+              margin: 0 8px;
+            }
+          }
+
+          .comment-text {
+            margin: 8px 0;
+          }
+
+          .comment-reactions {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            @include text-hint;
+            .comment-reaction {
+              text-transform: uppercase;
+              margin: 0 8px;
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              cursor: pointer;
+              .icon {
+                font-size: 16px;
+                margin: 8px;
+              }
+              &:hover {
+                @include text-secondary;
+              }
+            }
+          }
+
+        }
+      }
+    }
   }
 
   .video-page-sidebar {
