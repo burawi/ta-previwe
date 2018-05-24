@@ -425,6 +425,8 @@ html[dir="rtl"] .page-wrapper {
     min-width: 88px;
     margin: 8px;
     text-transform: uppercase;
+    border: none;
+    outline: none;
     cursor: pointer;
     font-size: 14px; }
   .page-content .page-section .page-section-header .page-section-close, .page-content .page-section .page-section-header .page-section-icon {
@@ -706,6 +708,8 @@ html[dir="rtl"] .video-card .video-card-info .video-card-corner-icon {
     min-width: 88px;
     margin: 8px;
     text-transform: uppercase;
+    border: none;
+    outline: none;
     cursor: pointer;
     color: rgba(0, 0, 0, 0.54);
     font-size: 14px; }
@@ -794,6 +798,8 @@ html[dir="rtl"] .video-card .video-card-info .video-card-corner-icon {
             min-width: 88px;
             margin: 8px;
             text-transform: uppercase;
+            border: none;
+            outline: none;
             cursor: pointer;
             font-size: 14px; }
           .video-page .video-page-content .video-description .video-description-header .video-description-actions .icon {
@@ -843,6 +849,8 @@ html[dir="rtl"] .video-card .video-card-info .video-card-corner-icon {
               min-width: 88px;
               margin: 8px;
               text-transform: uppercase;
+              border: none;
+              outline: none;
               cursor: pointer;
               font-size: 14px; }
           .video-page .video-page-content .video-comments .comment .comment-content .comment-header {
@@ -903,9 +911,11 @@ body {
   background-color: #fafafa;
   padding: 0;
   margin: 0;
-  font-family: 'Roboto Condensed', 'Tajawal', sans-serif;
   color: rgba(0, 0, 0, 0.87);
   font-size: 14px; }
+
+body, button, input {
+  font-family: 'Roboto Condensed', 'Tajawal', sans-serif; }
 
 .mdi {
   font-size: 24px;
@@ -1008,6 +1018,8 @@ a {
       min-width: 88px;
       margin: 8px;
       text-transform: uppercase;
+      border: none;
+      outline: none;
       cursor: pointer;
       font-size: 14px; }
   #auth-page .auth-footer {
