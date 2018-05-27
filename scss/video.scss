@@ -1,12 +1,14 @@
 .video-page {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
   padding: 24px 8px;
   width: 1280px;
   align-self: center;
   
-  .video-page-content {
+  .video-cell {
+    grid-column-start: 1;
+    grid-row-start: 1;
     display: flex;
     flex-direction: column;
     align-items: stretch;
@@ -109,97 +111,102 @@
         white-space: pre-wrap;
       }
     }
+  }
 
-    .video-comments {
+  .video-comments {
+    grid-column-start: 1;
+    grid-row-start: 2;
+    display: flex;
+    flex-direction: column;
+    .comments-header {
       display: flex;
-      flex-direction: column;
-      .comments-header {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        @include text-subheading;
-        margin: 24px 0;
+      flex-direction: row;
+      align-items: center;
+      @include text-subheading;
+      margin: 24px 0;
+    }
+
+    .comment {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      margin-bottom: 16px;
+
+      .comment-avatar {
+        width: 56px;
+        img {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+        }
       }
 
-      .comment {
+      .comment-content {
         display: flex;
-        flex-direction: row;
-        align-items: flex-start;
-        margin-bottom: 16px;
+        flex-direction: column;
+        flex: 1;
+        
+        .input-basic {
+          margin: 0;
+        }
 
-        .comment-avatar {
-          width: 56px;
-          img {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
+        .comment-form-actions {
+          display: flex;
+          flex-direction: row;
+          .comment-submit {
+            @include btn-primary;
           }
         }
 
-        .comment-content {
+        .comment-header {
+          @include text-caption;
           display: flex;
-          flex-direction: column;
-          flex: 1;
-          
-          .input-basic {
-            margin: 0;
+          flex-direction: row;
+
+          .comment-username {
+            font-weight: bold;
           }
-
-          .comment-form-actions {
-            display: flex;
-            flex-direction: row;
-            .comment-submit {
-              @include btn-primary;
-            }
+          .comment-time {
+            @include text-hint;
+            margin: 0 8px;
           }
+        }
 
-          .comment-header {
-            @include text-caption;
-            display: flex;
-            flex-direction: row;
+        .comment-text {
+          margin: 8px 0;
+        }
 
-            .comment-username {
-              font-weight: bold;
-            }
-            .comment-time {
-              @include text-hint;
-              margin: 0 8px;
-            }
-          }
+        .comment-reactions {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
 
-          .comment-text {
-            margin: 8px 0;
-          }
-
-          .comment-reactions {
+          @include text-hint;
+          .comment-reaction {
+            text-transform: uppercase;
+            margin: 0 8px;
             display: flex;
             flex-direction: row;
             align-items: center;
-
-            @include text-hint;
-            .comment-reaction {
-              text-transform: uppercase;
-              margin: 0 8px;
-              display: flex;
-              flex-direction: row;
-              align-items: center;
-              cursor: pointer;
-              .icon {
-                font-size: 16px;
-                margin: 8px;
-              }
-              &:hover {
-                @include text-secondary;
-              }
+            cursor: pointer;
+            .icon {
+              font-size: 16px;
+              margin: 8px;
+            }
+            &:hover {
+              @include text-secondary;
             }
           }
-
         }
+
       }
     }
   }
 
   .video-page-sidebar {
+    grid-column-start: 2;
+    grid-row-start: 1;
+    grid-row-end: -1;
     padding-left: 24px;
     display: flex;
     flex-direction: column;
@@ -236,5 +243,61 @@ html[dir="rtl"] .video-page {
   .video-page-sidebar {
     padding-right: 24px;
     padding-left: 0;
+  }
+}
+
+@media only screen and (max-width: 1300px) {
+  .video-page {
+    width: auto;
+    .video-cell {
+      width: 640px;
+      .video-box {
+        height: 360px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+
+  .video-page {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto;
+    width: 100%;
+    box-sizing: border-box;
+    padding-left: 0;
+    padding-right: 0;
+    
+    .video-cell {
+      grid-column-start: 1;
+      grid-row-start: 1;
+      width: 100%;
+
+      .video-box {
+        height: 0;
+        padding-bottom: 56.25%;
+        position: relative;
+
+        .video-player {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+        }
+      }
+    }
+    
+    .video-comments {
+      grid-column-start: 1;
+      grid-row-start: 3;
+    }
+    
+    .video-page-sidebar {
+      grid-column-start: 1;
+      grid-row-start: 2;
+      grid-row-end: 2;
+    }
   }
 }

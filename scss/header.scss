@@ -188,3 +188,35 @@ header .signin-btn {
   @include text-subheading;
 }
 
+@media only screen and (max-width: 1000px) {
+  header {
+    background: $colorPrimary;
+    color: #fff;
+    box-shadow: none;
+  }
+
+  header .main-corner .menu-switcher {
+    display: none;
+  }
+
+  header .header-appname {
+    padding: 4px 8px;
+    border-radius: 4px;
+    color: #fff;
+    img {
+      height: 28px;
+    }
+  }
+
+  header .search-box {
+    display: none;
+  }
+
+  header .header-icons.mobile {
+    padding: 0 8px;
+    .mdi {
+      margin: 8px;
+    }
+  }
+}
+

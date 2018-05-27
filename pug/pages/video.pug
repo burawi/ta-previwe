@@ -7,9 +7,9 @@ block content
   .page-wrapper
     .page-paper
       .video-page
-        .video-page-content
+        .video-cell
           .video-box
-            img(src="../assets/sample_images/video.png",style="width: 100%;height: 100%")
+            img.video-player(src="../assets/sample_images/video.png",style="width: 100%;height: 100%")
           .video-info
             .video-info-title تقديم المحور الخامس في العربية للبكالوريا آداب : الرواية العربية - الشحّاذ لنجيب محفوظ
             .video-info-details
@@ -34,36 +34,36 @@ block content
                 .icon.mdi.mdi-bell
             .video-description-content
               | هنا يكون الوصف الخاص بالمقطع وهذا مثال على ذلك أنا مصمم بارع
-          .video-comments
-            .comments-header
-              .comments-count= '10 ' + commentsCount
+        .video-comments
+          .comments-header
+            .comments-count= '10 ' + commentsCount
+          .comment
+            .comment-avatar
+              img(src='../assets/sample_images/avatar.png')
+            .comment-content
+              .input-basic
+                input(placeholder=commentPlaceholder)
+                .input-decoration
+              .comment-form-actions
+                .flex
+                .comment-submit= commentSubmit
+          each i in [1,2,3,4,5,6,7,8,9,10]
             .comment
               .comment-avatar
                 img(src='../assets/sample_images/avatar.png')
               .comment-content
-                .input-basic
-                  input(placeholder=commentPlaceholder)
-                  .input-decoration
-                .comment-form-actions
-                  .flex
-                  .comment-submit= commentSubmit
-            each i in [1,2,3,4,5,6,7,8,9,10]
-              .comment
-                .comment-avatar
-                  img(src='../assets/sample_images/avatar.png')
-                .comment-content
-                  .comment-header
-                    .comment-username Salim Mzoughi
-                    .comment-time منذ ساعتين
-                  .comment-text الساحلين دولة وخشينة عليكم
-                  .comment-reactions
-                    .comment-reaction
-                      .icon.mdi.mdi-thumb-up
-                      span 1925
-                    .comment-reaction
-                      .icon.mdi.mdi-thumb-down
-                      span 1919
-                    .comment-reaction= reply
+                .comment-header
+                  .comment-username Salim Mzoughi
+                  .comment-time منذ ساعتين
+                .comment-text الساحلين دولة وخشينة عليكم
+                .comment-reactions
+                  .comment-reaction
+                    .icon.mdi.mdi-thumb-up
+                    span 1925
+                  .comment-reaction
+                    .icon.mdi.mdi-thumb-down
+                    span 1919
+                  .comment-reaction= reply
         .videos-sidebar.video-page-sidebar
           .video-page-sidebar-title= nextVideo
           .video-card.video-card-landscape.next-video

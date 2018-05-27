@@ -83,6 +83,17 @@ mixin main-sidebar(active, free)
         a.fast-set(href="../fr/index.html") Français
         a.fast-set(href="../en/index.html") English
 
+mixin header-tabs(active) 
+  .mobile.header-tabs
+    .header-tab.active
+      .mdi.mdi-home
+    .header-tab
+      .mdi.mdi-fire
+    .header-tab
+      .mdi.mdi-youtube
+    .header-tab
+      .mdi.mdi-account
+
 doctype html
 html(dir=htmlDir)
   head
@@ -99,13 +110,18 @@ html(dir=htmlDir)
       .main-corner
         i#main-sidebar-switcher.mdi.mdi-menu.menu-switcher
         a.header-appname(href="index.html")
-          img(src='../assets/img/logo.png')
+          img.desktop(src='../assets/img/logo.png')
+          img.mobile(src='../assets/img/logo_white.png')
           |  TakiAcademy
-      .search-box
+      .search-box.desktop
         input(type='text', placeholder=search)
         .search-box-submit
           i.mdi.mdi-magnify
-      .header-icons
+      .flex
+      .header-icons.mobile
+        i.mdi.mdi-magnify
+        i.mdi.mdi-dots-vertical
+      .header-icons.desktop
         i.mdi.mdi-apps.icon
         i.mdi.mdi-bell.icon
         a.signin-btn(href="auth.html")= login
@@ -125,6 +141,7 @@ html(dir=htmlDir)
                 .user-corner-card-item-icon.mdi.mdi-logout-variant
                 .user-corner-card-item-text= logout
     .under-header
+      +header-tabs
       block sidebar
       block content
       script(src="../assets/js/theme.js")
