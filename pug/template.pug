@@ -85,13 +85,13 @@ mixin main-sidebar(active, free)
 
 mixin header-tabs(active) 
   .mobile.header-tabs
-    .header-tab.active
+    a.header-tab(href="index.html", class=(active == 'index') ? 'active' : '')
       .mdi.mdi-home
-    .header-tab
+    .header-tab(class=(active == 'trendings') ? 'active' : '')
       .mdi.mdi-fire
-    .header-tab
+    .header-tab(class=(active == 'sectors') ? 'active' : '')
       .mdi.mdi-youtube
-    .header-tab
+    a.header-tab(href="library.html", class=(active == 'library') ? 'active' : '')
       .mdi.mdi-account
 
 doctype html
@@ -103,7 +103,7 @@ html(dir=htmlDir)
     meta(name='viewport', content='width=device-width, initial-scale=1')
     link(rel="shortcut icon" href="../assets/img/logo.png")
     link(href='https://fonts.googleapis.com/css?family=Roboto+Condensed|Tajawal:500', rel='stylesheet')
-    link(rel='stylesheet', href='https://cdn.materialdesignicons.com/2.3.54/css/materialdesignicons.min.css')
+    link(rel='stylesheet', href='https://cdn.materialdesignicons.com/2.4.85/css/materialdesignicons.min.css')
     link(rel='stylesheet', href='../assets/css/style.css')
   body
     header
@@ -118,8 +118,15 @@ html(dir=htmlDir)
         .search-box-submit
           i.mdi.mdi-magnify
       .flex
+      input#mobile-header-search-toggle(type="checkbox")
+      .mobile-header-search.mobile
+        img.mobile-search-logo(src='../assets/img/logo.png')
+        input#mobile-header-search-input
+        .mobile-search-icons
+          i.mdi.mdi-magnify.mobile-search-icon
+          label.mdi.mdi-close.mobile-search-icon(for="mobile-header-search-toggle")
       .header-icons.mobile
-        i.mdi.mdi-magnify
+        label.mdi.mdi-magnify(for="mobile-header-search-toggle")
         i.mdi.mdi-dots-vertical
       .header-icons.desktop
         i.mdi.mdi-apps.icon
@@ -141,7 +148,6 @@ html(dir=htmlDir)
                 .user-corner-card-item-icon.mdi.mdi-logout-variant
                 .user-corner-card-item-text= logout
     .under-header
-      +header-tabs
       block sidebar
       block content
       script(src="../assets/js/theme.js")

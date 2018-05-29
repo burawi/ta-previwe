@@ -188,6 +188,56 @@ header .signin-btn {
   @include text-subheading;
 }
 
+#mobile-header-search-toggle {
+  display: none;
+
+  + .mobile-header-search {
+    display: none;
+    height: 48px;
+    align-items: center;
+    flex-direction: row;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    color: rgba(17, 17, 17, 0.6);
+    background-color: rgb(237, 237, 237);
+
+    .mobile-search-logo {
+      height: 28.24px;
+      margin: 12px;
+    }
+  
+    input {
+      flex: 1;
+      outline: none;
+      border: none;
+      background-color: transparent;
+      border-bottom: 1px solid $colorDivider;
+      @include text-subheading;
+      padding: 8px 0;
+
+      &:focus {
+        border-bottom-color: #3f51b5;
+        border-bottom-width: 2px;
+      }
+    }
+
+    .mobile-search-icons {
+      margin: 12px;
+      .mobile-search-icon {
+        margin: 8px;
+      }
+    }
+  }
+
+  &:checked + .mobile-header-search {
+    display: flex;
+  }
+}
+
+
 @media only screen and (max-width: 1000px) {
   header {
     background: $colorPrimary;

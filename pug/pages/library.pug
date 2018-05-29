@@ -1,0 +1,30 @@
+extends ../template
+
+block content
+  +header-tabs('library')
+  .page-wrapper
+    .library-header
+      img.library-header-avatar(src='../assets/sample_images/avatar.png')
+      .library-header-username Mohamed Ben Ahmed
+        i.mdi.mdi-chevron-down.library-header-username-icon
+    .library-nav
+      .library-nav-item
+        .library-nav-icon.mdi.mdi-history
+        .library-nav-text= history
+      .library-nav-item
+        .library-nav-icon.mdi.mdi-clock
+        .library-nav-text= watchLater
+    .library-playlists
+      .library-playlists-title= playlists
+      .library-playlists-list
+        each i in [1,2,3,4,5,6,7,8,9,10,11,12,13]
+          a.video-card.video-card-landscape(href="playlist.html")
+            .video-card-thumbnail
+              img.video-card-image(src='../assets/sample_images/v1.jpeg')
+              i.video-card-action.mdi.mdi-clock
+              .video-card-playlist_info
+                .video-card-length 15
+                .mdi.mdi-playlist-play
+            .video-card-info 
+              .video-card-title عرض شكب عالباك
+              .video-card-author تقي الدين بن مسعود
