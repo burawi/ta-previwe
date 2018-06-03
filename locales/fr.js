@@ -39,6 +39,8 @@ module.exports = {
   commentPlaceholder: 'Ajouter un commentaire publique',
   commentSubmit: 'Commenter',
   reply: 'répondre',
+  videosCount: "vidéos",
+  nonWatched: "pas de vues",
   searchInHistory: 'Rechercher dans l\'historique',
   manageActivity: 'Gérer les activités',
   clearHistory: 'Effacer l\'historique',

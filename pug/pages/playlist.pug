@@ -18,6 +18,15 @@ block content
           div 80 مشاهدة
           div تم التحديث قبل أسبوع
       .playlist-list.videos-sidebar
+        .playlist-list-header.mobile
+          .playlist-list-header-main
+            .playlist-list-title كيف أنجح في الباكالوريا
+            .playlist-list-author صابر بوزايدة
+            a.playlist-header-playall(href="video.html")
+              .mdi.mdi-play
+          .playlist-list-header-info
+            .playlist-list-count= '122 ' + videos
+            .playlist-list-status= nonWatched
         each i in [1,2,3,4,5,6,7]
           .playlist-list-item
             .playlist-item-number= i

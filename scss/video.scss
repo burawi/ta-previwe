@@ -298,6 +298,9 @@ html[dir="rtl"] .video-page {
       grid-column-start: 1;
       grid-row-start: 2;
       grid-row-end: 2;
+      box-sizing: border-box;
+      width: 100%;
+      padding: 8px 0 !important;
     }
   }
 }

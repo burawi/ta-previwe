@@ -769,6 +769,72 @@ html[dir="rtl"] .video-card .video-card-info .video-card-corner-icon {
         width: 120px;
         height: 67px; }
 
+.playlist-list-header {
+  display: flex;
+  flex-direction: column;
+  width: 100%; }
+
+.playlist-list-header-main {
+  background-color: rgba(237, 237, 237, 0.6);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  padding: 12px;
+  box-sizing: border-box;
+  position: relative; }
+
+.playlist-list-title {
+  font-size: 16px;
+  margin-bottom: 4px; }
+
+.playlist-list-author {
+  margin-bottom: 16px; }
+
+.playlist-header-playall {
+  border-radius: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 56px;
+  width: 56px;
+  border: none;
+  outline: none;
+  background-color: #2ba7df;
+  color: white;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+  position: absolute;
+  bottom: -28px;
+  right: 28px; }
+
+html[dir="rtl"] .playlist-header-playall {
+  right: unset;
+  left: 28px; }
+
+.playlist-list-header-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 40px;
+  padding: 0 12px 12px 12px; }
+  .playlist-list-header-info .playlist-list-status::before {
+    content: '⚫';
+    margin: 0 4px; }
+
+@media only screen and (max-width: 1000px) {
+  .playlist-sidebar {
+    display: none; }
+  .playlist-list .playlist-list-item .playlist-item-number {
+    display: none; }
+  .playlist-list .playlist-list-item .playlist-item-content .video-card {
+    width: 100%;
+    border: none;
+    padding: 8px 0; }
+    .playlist-list .playlist-list-item .playlist-item-content .video-card .video-card-thumbnail {
+      width: 160px;
+      height: 90px; }
+  .playlist-list.videos-sidebar {
+    padding-top: 0; } }
+
 .videos-sidebar {
   padding-top: 8px;
   flex: 1;
@@ -1050,7 +1116,10 @@ html[dir="rtl"] .video-page .video-page-sidebar {
     .video-page .video-page-sidebar {
       grid-column-start: 1;
       grid-row-start: 2;
-      grid-row-end: 2; } }
+      grid-row-end: 2;
+      box-sizing: border-box;
+      width: 100%;
+      padding: 8px 0 !important; } }
 
 body {
   background-color: #fafafa;

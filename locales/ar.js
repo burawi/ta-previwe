@@ -52,6 +52,8 @@ module.exports = {
   createYourAccount: "إنشاء حسابك في تقي أكاديمي",
   firstName: "الإسم",
   lastName: "اللقب",
+  videosCount: "من الفيديوات",
+  nonWatched: "لم تتم المشاهدة",
   yourEmail: "بريدك الإلكتروني",
   youllNeedCofirmEmail: "يلزمك تأكيد ملكيتك لهذا البريد الالكتروني.",
   password: "كلمة المرور",

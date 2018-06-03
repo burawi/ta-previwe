@@ -94,3 +94,86 @@
     }
   }
 }
+
+.playlist-list-header {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.playlist-list-header-main {
+  background-color: rgba(237, 237, 237, 0.6);
+  border-bottom: 1px solid $colorDivider;
+  padding: 12px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.playlist-list-title {
+  @include text-subheading;
+  margin-bottom: 4px;
+}
+
+.playlist-list-author {
+  margin-bottom: 16px;
+}
+
+.playlist-header-playall {
+  @include btn-float;
+  position: absolute;
+  bottom: -28px;
+  right: 28px;
+}
+
+html[dir="rtl"] .playlist-header-playall {
+  right: unset;
+  left: 28px;
+}
+
+.playlist-list-header-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 40px;
+  padding: 0 12px 12px 12px;
+
+  .playlist-list-status::before {
+    content: '⚫';
+    margin: 0 4px;
+  }
+}
+
+
+@media only screen and (max-width: 1000px) {
+
+  .playlist-sidebar {
+    display: none;
+  }
+
+  .playlist-list {
+    .playlist-list-item {
+
+      .playlist-item-number {
+        display: none;
+      }
+
+      .playlist-item-content {
+        .video-card {
+          width: 100%;
+          border: none;
+          padding: 8px 0;
+          
+          .video-card-thumbnail {
+            width: 160px;
+            height: 90px;
+          }
+        }
+      }
+    }
+
+    &.videos-sidebar {
+      padding-top: 0;
+    }
+  }
+  
+}
