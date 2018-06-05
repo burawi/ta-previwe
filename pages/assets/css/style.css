@@ -298,7 +298,8 @@ header .signin-btn {
   header {
     background: #2ba7df;
     color: #fff;
-    box-shadow: none; }
+    box-shadow: none;
+    position: absolute; }
   header .main-corner .menu-switcher {
     display: none; }
   header .header-appname {
@@ -538,17 +539,21 @@ html[dir="rtl"] .page-wrapper {
     width: 100%;
     padding: 0 16px;
     box-sizing: border-box; }
-  .page-content .page-section .page-section-list {
+  .page-content .page-section .page-section-list,
+  .page-content .page-section .page-section-list.view-list {
     flex-direction: column;
     flex-wrap: nowrap; }
-    .page-content .page-section .page-section-list .video-card {
+    .page-content .page-section .page-section-list .video-card,
+    .page-content .page-section .page-section-list.view-list .video-card {
       padding-bottom: 16px;
       border-bottom: 1px solid rgba(0, 0, 0, 0.12); }
-      .page-content .page-section .page-section-list .video-card .video-card-thumbnail {
+      .page-content .page-section .page-section-list .video-card .video-card-thumbnail,
+      .page-content .page-section .page-section-list.view-list .video-card .video-card-thumbnail {
         width: 100%;
         height: 0;
         padding-bottom: 56.25%; }
-        .page-content .page-section .page-section-list .video-card .video-card-thumbnail .video-card-image {
+        .page-content .page-section .page-section-list .video-card .video-card-thumbnail .video-card-image,
+        .page-content .page-section .page-section-list.view-list .video-card .video-card-thumbnail .video-card-image {
           position: absolute; } }
 
 .tabs {
@@ -878,6 +883,33 @@ html[dir="rtl"] .playlist-header-playall {
     cursor: pointer;
     color: rgba(0, 0, 0, 0.54);
     font-size: 14px; }
+
+.sectors-mobile-new {
+  display: none;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: rgba(17, 17, 17, 0.6); }
+
+@media only screen and (max-width: 1000px) {
+  .page-section-list {
+    flex-direction: column; }
+  .sectors-grid-item {
+    flex-direction: row;
+    width: 100%; }
+    .sectors-grid-item img.sectors-grid-image {
+      width: 48px;
+      height: 48px; }
+    .sectors-grid-item .sectors-grid-title {
+      margin: 4px 12px;
+      font-size: 16px;
+      flex: 1; }
+    .sectors-grid-item .sectors-grid-details {
+      display: none; }
+    .sectors-grid-item .sectors-grid-action {
+      display: none; }
+    .sectors-grid-item .sectors-mobile-new {
+      display: block; } }
 
 .video-page {
   display: grid;

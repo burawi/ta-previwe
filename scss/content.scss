@@ -143,7 +143,8 @@ html[dir="rtl"] .page-wrapper {
     box-sizing: border-box;
   }
 
-  .page-content .page-section .page-section-list {
+  .page-content .page-section .page-section-list,
+  .page-content .page-section .page-section-list.view-list {
     flex-direction: column;
     flex-wrap: nowrap;
     .video-card {

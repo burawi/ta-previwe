@@ -25,3 +25,46 @@
     @include btn-default;
   }
 }
+
+.sectors-mobile-new {
+  display: none;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: rgba(17, 17, 17, 0.6);
+}
+
+
+@media only screen and (max-width: 1000px) {
+  .page-section-list {
+    flex-direction: column;
+  }
+
+  .sectors-grid-item {
+    flex-direction: row;
+    width: 100%;
+
+    img.sectors-grid-image {
+      width: 48px;
+      height: 48px;
+    }
+
+    .sectors-grid-title {
+      margin: 4px 12px;
+      @include text-subheading;
+      flex: 1;
+    }
+
+    .sectors-grid-details {
+      display: none;
+    }
+
+    .sectors-grid-action {
+      display: none;
+    }
+
+    .sectors-mobile-new {
+      display: block;
+    }
+  }
+}
