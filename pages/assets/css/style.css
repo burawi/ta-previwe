@@ -298,8 +298,7 @@ header .signin-btn {
   header {
     background: #2ba7df;
     color: #fff;
-    box-shadow: none;
-    position: absolute; }
+    box-shadow: none; }
   header .main-corner .menu-switcher {
     display: none; }
   header .header-appname {
