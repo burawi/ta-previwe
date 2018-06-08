@@ -1187,7 +1187,8 @@ a {
   .desktop {
     visibility: hidden;
     height: 0;
-    width: 0; }
+    width: 0;
+    display: none; }
   .mobile {
     visibility: visible;
     height: auto;
