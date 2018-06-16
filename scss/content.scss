@@ -134,7 +134,12 @@ html[dir="rtl"] .page-wrapper {
   }
 
   html[dir="rtl"] .page-wrapper {
-    margin: 0;
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  .header-tabs + .page-wrapper {
+    margin-top: 50px;
   }
   
   .page-content {
