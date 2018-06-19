@@ -60,4 +60,5 @@ module.exports = {
   confirmPassword: "تأكيد كلمة المرور",
   passwordHelper: "استخدم 8 أحرف أو أكثر باستعمال مزيج من الأحرف والأرقام والرموز",
   signinInstead: "تسجيل الدخول بدلاً من ذلك.",
+  offres: "العروض",
 }

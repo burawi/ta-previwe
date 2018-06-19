@@ -51,6 +51,7 @@ module.exports = {
   forgotMail: "Adresse e-mail oubliée ?",
   createAccount: "Créer un compte",
   next: "Suivant",
+  offres: "offres",
   createYourAccount: "Créer votre compte TakiAcademy",
   firstName: "prénom",
   lastName: "nom",

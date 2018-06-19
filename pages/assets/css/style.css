@@ -347,6 +347,7 @@ header .signin-btn {
   position: fixed;
   left: 0;
   top: 56px;
+  z-index: 4;
   -webkit-transition: all .5s ease-out;
   /* Safari */
   transition: all .5s ease-out; }
@@ -1410,3 +1411,59 @@ html[dir="rtl"] .auth-field label {
   .library-playlists-list .video-card-thumbnail {
     width: 160px;
     height: 90px; }
+
+.offres {
+  display: flex;
+  flex-direction: row; }
+
+.offre {
+  width: 210px;
+  display: flex;
+  flex-direction: column;
+  margin: 8px; }
+
+.offre-header {
+  height: 118px;
+  box-sizing: border-box;
+  padding: 16px;
+  color: white; }
+  .offre-header .offre-title {
+    font-size: 34px; }
+  .offre-header .offre-price {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    font-size: 34px; }
+    .offre-header .offre-price .offre-currency {
+      font-size: 16px; }
+
+.offre-details {
+  margin-top: 8px; }
+  .offre-details .offre-detail {
+    display: flex;
+    flex-direction: row;
+    font-size: 16px; }
+    .offre-details .offre-detail.disabled {
+      color: rgba(0, 0, 0, 0.38); }
+    .offre-details .offre-detail .offre-detail-text {
+      margin: 0 8px; }
+
+.offre-action {
+  background-color: #eeeeee;
+  border-radius: 2px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 36px;
+  min-width: 88px;
+  margin: 8px;
+  text-transform: uppercase;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.54);
+  font-size: 14px;
+  align-self: flex-start;
+  margin-top: 8px;
+  color: #fff; }

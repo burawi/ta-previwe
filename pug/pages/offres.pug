@@ -1,0 +1,28 @@
+extends ../template
+
+block sidebar
+  +main-sidebar('index')
+
+block content
+  +header-tabs('offres')
+  .page-wrapper
+    .page-paper.transparent
+      .page-content
+        .page-section
+          .page-section-header
+            .page-section-title= offres
+          .offres
+            .offre
+              .offre-header(style="background-color: #aaa146")
+                .offre-title Silver
+                .offre-price 420
+                  .offre-currency دينار
+              .offre-details
+                .offre-detail
+                  .mdi.mdi-check
+                  .offre-detail-text برشا قراية
+                .offre-detail.disabled
+                  .mdi.mdi-close
+                  .offre-detail-text برشا جو
+              .offre-action.btn(style="background-color: #aaa146") شراء
+            

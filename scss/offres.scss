@@ -1,0 +1,56 @@
+.offres {
+  display: flex;
+  flex-direction: row;
+}
+
+.offre {
+  width: 210px;
+  display: flex;
+  flex-direction: column;
+  margin: 8px;
+}
+
+.offre-header {
+  height: 118px;
+  box-sizing: border-box;
+  padding: 16px;
+  color: white;
+  .offre-title {
+    @include text-h4;
+  }
+
+  .offre-price {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+
+    @include text-h4;
+
+    .offre-currency {
+      @include text-subheading;
+    }
+  }
+
+}
+
+.offre-details {
+  margin-top: 8px;
+  .offre-detail {
+    display: flex;
+    flex-direction: row;
+    @include text-subheading;
+    &.disabled {
+      @include text-hint;
+    }
+    .offre-detail-text {
+      margin: 0 8px;
+    }
+  }
+}
+
+.offre-action {
+  @include btn-default;
+  align-self: flex-start;
+  margin-top: 8px;
+  color: #fff;
+}
